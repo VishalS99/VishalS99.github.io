@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+}
+
+#portfolio {
+  position: relative;
+}
+#homepage {
+  position: relative;
+  border: 15px solid #fd55c2;
+  height: calc(100vh - 30px);
+  background-color: black;
+}
+#pf_img {
+  padding-top: 60px;
+}
+#pf_img > img {
+  width: 350px;
+  clip-path: circle(60% at center);
+  display: block;
+  margin: auto;
+}
+
+#name {
+  text-align: center;
+  color: white;
+}
+#name > h1 {
+  font-family: "Nanum Gothic Coding", monospace;
+  font-size: 30px;
+  /* overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.15em;
+  animation: myName 1.5s steps(32, end); */
+}
+
+/* #src-name {
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.15em;
+  animation: myName 3.5s steps(32, end);
+} */
+
+/* @keyframes myName {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+} */
+
+@media only screen and (max-width: 650px) {
+  body {
+    margin: 0;
+    height: 100vh;
+    max-width: 100%;
+  }
+
+  #pf_img > img {
+    width: 300px;
+    clip-path: circle(60% at center);
+    display: block;
+    margin: auto;
+  }
+}

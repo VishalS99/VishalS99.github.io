@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vishal Saranathan</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div id="portfolio">
+      <section id="homepage">
+        <div id="pf_img">
+          <img src="./pf_img.jpg" alt="" />
+        </div>
+        <div id="name">
+          <h1>{ <span id="typ-name"></span> }</h1>
+        </div>
+      </section>
+
+      <section>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia
+          quam fuga quasi, corporis quisquam consequatur quod voluptatibus
+          corrupti molestiae quibusdam consectetur aut voluptates accusamus amet
+          consequuntur rem, non, beatae aliquid!
+        </p>
+      </section>
+    </div>
+    <script>
+      let name = "Vishal Saranathan";
+      let speed = 50,
+        i = 0;
+      function typewriter() {
+        if (i < name.length) {
+          document.getElementById("typ-name").innerHTML += name[i];
+          i++;
+          setTimeout(typewriter, speed);
+        }
+      }
+      window.onload = () => setTimeout(typewriter, 1000);
+    </script>
+  </body>
+</html>
