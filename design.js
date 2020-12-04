@@ -2,7 +2,8 @@ const canvas = document.getElementById("bg-design");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth
 canvas.height = window.innerHeight
-
+ctx.imageSmoothingEnabled = true;
+ctx.translate(0.5, 0.5);
 
 class Triangles{
     constructor(A, B, C, color) {
@@ -57,16 +58,16 @@ let t4 = new Triangles(a4, b4, c4);
 let t5 = new Triangles(a5, b5, c5);
 let t6 = new Triangles(a6, b6, c6);
 
-let port = new  Image();
-port.src = "./pf_img.jpg"
+// let port = new  Image();
+// port.src = "./pf_img.jpg"
 
-port_pos = {
-    x: canvas.width / 2 - 200,
-    y: canvas.height / 15 - 50
-}
-port.onload = () => {
-    ctx.drawImage(port, port_pos.x, port_pos.y, 400,400);
-}
+// port_pos = {
+//     x: canvas.width / 2 - 200,
+//     y: canvas.height / 15 - 50
+// }
+// port.onload = () => {
+//     ctx.drawImage(port, port_pos.x, port_pos.y, 400,400);
+// }
 
 function render() {
     let step = Math.floor((new Date() - time)/200)%6;

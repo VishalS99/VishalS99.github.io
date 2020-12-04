@@ -1,13 +1,16 @@
 * {
   margin: 0;
   padding: 0;
-} /* to remove the top and left whitespace */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 html,
 body {
   width: 100%;
   height: 100%;
-} /* just to be sure these are full screen*/
+  overflow: hidden;
+}
 
 canvas {
   display: block;
@@ -18,12 +21,38 @@ canvas {
   position: relative;
 }
 #container canvas,
-#overlay {
+#overlay,
+#overlay-rain {
   position: absolute;
 }
 #overlay {
   top: 46vh;
   width: 100vw;
+}
+
+#port_img {
+  position: absolute;
+  display: block;
+  top: -43vh;
+  left: 40vw;
+  width: 20vw;
+  z-index: 10;
+}
+
+@media only screen and (max-width: 700px) {
+  #port_img {
+    top: -40vh;
+    left: 14vw;
+    width: 75vw;
+  }
+}
+
+@media only screen and (min-width: 700px) and (max-width: 1200px) {
+  #port_img {
+    top: -40vh;
+    left: 30vw;
+    width: 40vw;
+  }
 }
 
 p {
@@ -32,7 +61,7 @@ p {
   text-align: center;
 }
 
-p > a {
+a {
   margin: 5px;
   color: #ffe396;
 }
@@ -49,4 +78,108 @@ p > a {
   font-size: 1.1em;
   padding-bottom: 0;
   font-family: "Consolas";
+}
+
+.rain {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.rain.back-row {
+  display: none;
+  z-index: 1;
+  bottom: 60px;
+  opacity: 0.5;
+}
+
+#overlay-rain.back-row-toggle .rain.back-row {
+  display: block;
+}
+
+.drop {
+  position: absolute;
+  bottom: 100%;
+  width: 15px;
+  height: 120px;
+  pointer-events: none;
+  animation: drop 0.5s linear infinite;
+}
+
+@keyframes drop {
+  0% {
+    transform: translateY(0vh);
+  }
+  75% {
+    transform: translateY(90vh);
+  }
+  100% {
+    transform: translateY(90vh);
+  }
+}
+
+.stem {
+  width: 1px;
+  height: 60%;
+  margin-left: 7px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(253, 85, 194, 0.9)
+  );
+  animation: stem 0.5s linear infinite;
+}
+
+@keyframes stem {
+  0% {
+    opacity: 1;
+  }
+  65% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.toggles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.toggle:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.toggle:active {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.toggle.active {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.back-row-toggle {
+  top: 90px;
+  line-height: 12px;
+  padding-top: 14px;
+}
+
+.single-toggle {
+  top: 160px;
+}
+
+#overlay-rain.single-toggle .drop {
+  display: none;
+}
+
+#overlay-rain.single-toggle .drop:nth-child(10) {
+  display: block;
 }

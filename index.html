@@ -10,13 +10,21 @@
     />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="index.css" />
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
   </head>
   <body>
     <div id="container">
+      <div id="overlay-rain back-row-toggle splat-toggle">
+        <div class="rain front-row"></div>
+        <div class="rain back-row"></div>
+      </div>
+      
       <canvas id="bg-design"></canvas>
+
       <div id="overlay">
+        <img id="port_img" src="./pf_img-bg.png" alt="">
         <p id="bio">A tech enthusiast, Computer Vision aspirant and a passionate photographer!</p>
-        <p>
+        <p id="soc">
           <a href="https://www.facebook.com/vso99"><i class="fa fa-facebook" aria-hidden="true"></i></a>
           <a href="https://www.instagram.com/_vishal_here_/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
           <a href="https://github.com/VishalS99"><i class="fa fa-github" aria-hidden="true"></i></a>
@@ -31,4 +39,8 @@
 
   </body>
   <script src="design.js"></script>
+  <script src="rain.js"></script>
+  <!-- <script>
+    window.onresize = function(){ location.reload(); }
+  </script> -->
 </html>
