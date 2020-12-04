@@ -7,9 +7,14 @@
 
 html,
 body {
-  width: 100%;
   height: 100%;
   overflow: hidden;
+}
+
+html {
+  border-top: 10px solid #fd55c2;
+  border-left: 10px solid #fd55c2;
+  border-right: 10px solid #fd55c2;
 }
 
 canvas {
@@ -30,6 +35,12 @@ canvas {
   width: 100vw;
 }
 
+@media only screen and (max-width: 700px) {
+  #overlay {
+    left: -2vw;
+  }
+}
+
 #port_img {
   position: absolute;
   display: block;
@@ -39,9 +50,9 @@ canvas {
   z-index: 10;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 750px) {
   #port_img {
-    top: -40vh;
+    top: -42vh;
     left: 14vw;
     width: 75vw;
   }
@@ -49,9 +60,9 @@ canvas {
 
 @media only screen and (min-width: 700px) and (max-width: 1200px) {
   #port_img {
-    top: -40vh;
-    left: 30vw;
-    width: 40vw;
+    top: -39.5vh;
+    left: 35vw;
+    width: 30vw;
   }
 }
 
@@ -78,6 +89,15 @@ a {
   font-size: 1.1em;
   padding-bottom: 0;
   font-family: "Consolas";
+}
+
+@media only screen and (max-width: 700px) {
+  #bio {
+    color: aliceblue;
+    font-size: 1em;
+    padding-bottom: 0;
+    font-family: "Consolas";
+  }
 }
 
 .rain {
@@ -115,7 +135,7 @@ a {
   }
   75% {
     transform: translateY(90vh);
-    opacity: 0.6;
+    opacity: 0.1;
   }
   100% {
     transform: translateY(100vh);
@@ -124,13 +144,13 @@ a {
 }
 
 .stem {
-  width: 1px;
+  width: 2px;
   height: 60%;
   margin-left: 7px;
   background: linear-gradient(
     to bottom,
     rgba(255, 255, 255, 0),
-    rgba(253, 85, 194, 0.9)
+    rgba(253, 85, 194, 0.8)
   );
   animation: stem 0.5s linear infinite;
 }
