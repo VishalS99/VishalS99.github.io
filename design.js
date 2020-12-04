@@ -26,27 +26,27 @@ class Triangles{
     }
 }
 
-let a1 = {x: 0, y:window.innerHeight/3 + 200};
+let a1 = {x: 0, y:window.innerHeight/3 + 220};
 let b1 = {x: 0, y:window.innerHeight};
 let c1 = {x: window.innerWidth/3, y:window.innerHeight};
 
 let a2 = {x: 0, y:window.innerHeight};
-let b2 = {x: window.innerWidth/7, y:window.innerHeight/2 + 100};
+let b2 = {x: window.innerWidth/7, y:window.innerHeight/2 + 120};
 let c2 = {x: window.innerWidth/2.2, y:window.innerHeight};
 
 let a3 = {x: window.innerWidth/4, y:window.innerHeight};
-let b3 = {x: window.innerWidth/3, y:3*window.innerHeight/5 + 150};
+let b3 = {x: window.innerWidth/3, y:3*window.innerHeight/5 + 170};
 let c3 = {x: 3*window.innerWidth/4, y:window.innerHeight};
 
 let a4 = {x: 3*window.innerWidth/4, y:window.innerHeight};
-let b4 = {x: 2*window.innerWidth/3, y:3*window.innerHeight/5 + 150};
+let b4 = {x: 2*window.innerWidth/3, y:3*window.innerHeight/5 + 170};
 let c4 = {x: window.innerWidth/4, y:window.innerHeight};
 
 let a5 = {x: window.innerWidth, y:window.innerHeight};
-let b5 = {x: 6*window.innerWidth/7, y:window.innerHeight/2 + 100};
+let b5 = {x: 6*window.innerWidth/7, y:window.innerHeight/2 + 120};
 let c5 = {x: window.innerWidth - window.innerWidth/2.2, y:window.innerHeight};
 
-let a6 = {x: window.innerWidth, y:window.innerHeight/3 + 200};
+let a6 = {x: window.innerWidth, y:window.innerHeight/3 + 220};
 let b6 = {x: window.innerWidth, y:window.innerHeight};
 let c6 = {x: 2*window.innerWidth/3, y:window.innerHeight};
 
@@ -62,7 +62,7 @@ port.src = "./pf_img.jpg"
 
 port_pos = {
     x: canvas.width / 2 - 200,
-    y: canvas.height / 15 - 20
+    y: canvas.height / 15 - 50
 }
 port.onload = () => {
     ctx.drawImage(port, port_pos.x, port_pos.y, 400,400);
@@ -85,7 +85,7 @@ function render() {
     ctx.font = "2em Consolas";
     ctx.fillStyle = "white";
     ctx.textAlign = "center";
-    ctx.fillText("Vishal Saranathan", canvas.width/2, canvas.height/2); 
+    ctx.fillText("Vishal Saranathan(VSO)", canvas.width/2, canvas.height/2 - 40); 
 }
 let time = new Date();
 render()

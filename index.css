@@ -22,7 +22,7 @@ canvas {
   position: absolute;
 }
 #overlay {
-  top: 50vh;
+  top: 46vh;
   width: 100vw;
 }
 
@@ -42,4 +42,11 @@ p > a {
   font-size: 1em;
   margin-top: 0;
   padding-top: 0;
+}
+
+#bio {
+  color: aliceblue;
+  font-size: 1.1em;
+  padding-bottom: 0;
+  font-family: "Consolas";
 }
