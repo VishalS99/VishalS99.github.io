@@ -8,41 +8,26 @@
       href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@700&display=swap"
       rel="stylesheet"
     />
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <div id="portfolio">
-      <section id="homepage">
-        <div id="pf_img">
-          <img src="./pf_img.jpg" alt="" />
-        </div>
-        <div id="name">
-          <h1>{ <span id="typ-name"></span> }</h1>
-        </div>
-      </section>
-
-      <section>
+    <div id="container">
+      <canvas id="bg-design"></canvas>
+      <div id="overlay">
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia
-          quam fuga quasi, corporis quisquam consequatur quod voluptatibus
-          corrupti molestiae quibusdam consectetur aut voluptates accusamus amet
-          consequuntur rem, non, beatae aliquid!
+          <a href="https://www.facebook.com/vso99"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/_vishal_here_/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://github.com/VishalS99"><i class="fa fa-github" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/in/vishalsaranathan/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+          <a href="mailto:s-vishal1999@hotmail.com"><i class="fa fa-envelope" aria-hidden="true"></i></a>
         </p>
-      </section>
+        <p id="cv">
+          To know more about me, download my <a href="./Resume.pdf">Resume/CV</a>
+        </p>
+      </div>
     </div>
-    <script>
-      let name = "Vishal Saranathan";
-      let speed = 50,
-        i = 0;
-      function typewriter() {
-        if (i < name.length) {
-          document.getElementById("typ-name").innerHTML += name[i];
-          i++;
-          setTimeout(typewriter, speed);
-        }
-      }
-      window.onload = () => setTimeout(typewriter, 1000);
-    </script>
+
   </body>
+  <script src="design.js"></script>
 </html>
