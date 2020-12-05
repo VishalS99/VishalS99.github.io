@@ -22,7 +22,7 @@ class Triangles{
         ctx.fill();
     }
     update(isUpdate) {
-        this.color = isUpdate? "#fd55c2" : "#7E0152";
+        this.color = isUpdate? "#ffb0d9" : "#7E0152";
     }
 }
 
@@ -79,27 +79,33 @@ ctx.arc(x, y, radius, 0, 2 * Math.PI);
 ctx.fillStyle = gradient;
 ctx.fill();
 
-function render() {
-    let step = Math.floor((new Date() - time)/300)%7;
-    t1.update(step === 1? true: false);
-    t2.update(step === 2? true: false);
-    t3.update(step === 3? true: false);
-    t7.update(step === 4? true: false);
-    t4.update(step === 5? true: false);
-    t5.update(step === 6? true: false);
-    t6.update(step === 0? true: false);
-    t1.draw();
-    t2.draw();
-    t3.draw();
-    t4.draw();
-    t7.draw();
-    t5.draw();
-    t6.draw();
+
+function render(step, flag) {
+        t1.update(step === 1? true: false);
+        t2.update(step === 2? true: false);
+        t3.update(step === 3? true: false);
+        t7.update(step === 4? true: false);
+        t4.update(step === 5? true: false);
+        t5.update(step === 6? true: false);
+        t6.update(step === 0? true: false);
+        t1.draw();
+        t2.draw();
+        t3.draw();
+        t7.draw();
+        t4.draw();
+        t5.draw();
+        t6.draw();
     ctx.font = "2em Consolas";
     ctx.fillStyle = "white";
     ctx.textAlign = "center";
     ctx.fillText("Vishal Saranathan", canvas.width/2, canvas.height/2 - 40); 
 }
-let time = new Date();
+let flag = false;
+let step = 1;
 render()
-setInterval(render, 300)
+setInterval(() => {
+    if(step%7 === 1) {flag = false;}
+    else if (step%7 === 0) {flag = true;}
+    if(flag) {step--;} else{step++;}
+    render(step%7, flag);
+}, 150)
