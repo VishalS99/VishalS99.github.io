@@ -13,6 +13,7 @@ class Triangles{
     }
     draw() {
         ctx.beginPath();
+        ctx.lineCap = 'round';
         ctx.moveTo(this.A.x, this.A.y)
         ctx.lineTo(this.B.x, this.B.y);
         ctx.lineTo(this.C.x, this.C.y);
