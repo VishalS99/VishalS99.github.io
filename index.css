@@ -12,9 +12,9 @@ body {
 }
 
 html {
-  border-top: 10px solid #fd55c2;
-  border-left: 10px solid #fd55c2;
-  border-right: 10px solid #fd55c2;
+  border: 10px solid #7e0152;
+  /* border-left: 10px solid #7e0152;
+  border-right: 10px solid #7e0152; */
 }
 
 canvas {
