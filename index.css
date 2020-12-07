@@ -75,6 +75,7 @@ p {
 a {
   margin: 5px;
   color: #ffe396;
+  font-family: 'Inconsolata';
 }
 
 #cv {
@@ -115,7 +116,7 @@ a {
   opacity: 0.5;
 }
 
-#overlay-rain.back-row-toggle .rain.back-row {
+#overlay-rain.rain.back-row {
   display: block;
 }
 
@@ -135,7 +136,7 @@ a {
   }
   75% {
     transform: translateY(90vh);
-    opacity: 0.1;
+    opacity: 0.05;
   }
   100% {
     transform: translateY(100vh);
@@ -145,12 +146,12 @@ a {
 
 .stem {
   width: 2px;
-  height: 60%;
+  height: 70%;
   margin-left: 7px;
   background: linear-gradient(
     to bottom,
     rgba(255, 255, 255, 0),
-    rgba(253, 85, 194, 0.8)
+    rgba(253, 85, 194, 0.6)
   );
   animation: stem 0.5s linear infinite;
 }
@@ -168,41 +169,4 @@ a {
   100% {
     opacity: 0;
   }
-}
-
-.toggles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 3;
-}
-
-.toggle:hover {
-  background-color: rgba(255, 255, 255, 0.25);
-}
-
-.toggle:active {
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-.toggle.active {
-  background-color: rgba(255, 255, 255, 0.4);
-}
-
-.back-row-toggle {
-  top: 90px;
-  line-height: 12px;
-  padding-top: 14px;
-}
-
-.single-toggle {
-  top: 160px;
-}
-
-#overlay-rain.single-toggle .drop {
-  display: none;
-}
-
-#overlay-rain.single-toggle .drop:nth-child(10) {
-  display: block;
 }

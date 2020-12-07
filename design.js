@@ -96,7 +96,7 @@ function render(step, flag) {
         t4.draw();
         t5.draw();
         t6.draw();
-    ctx.font = "2em Consolas";
+    ctx.font = "2em Inconsolata";
     ctx.fillStyle = "white";
     ctx.textAlign = "center";
     ctx.fillText("Vishal Saranathan", canvas.width/2, canvas.height/2 - 40); 
