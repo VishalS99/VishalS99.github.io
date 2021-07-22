@@ -114,8 +114,8 @@ setInterval(() => {
     if(flag) {--step;} else{++step;}
     render(step%7, flag);
     if(step%7 == 1 || step%7 == 0) {
-        $("html").css("border", "10px solid #ffb0d9");
+        $(".dheader").css("border", "10px solid #ffb0d9");
     } else {
-        $("html").css("border", "10px solid #7E0152")
+        $(".dheader").css("border", "10px solid #7E0152")
     }
 }, 150)

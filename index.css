@@ -8,24 +8,25 @@
 html,
 body {
   height: 100%;
-  overflow: hidden;
-}
-
-html {
-  border: 10px solid #7e0152;
-  /* border-left: 10px solid #7e0152;
-  border-right: 10px solid #7e0152; */
 }
 
 canvas {
   display: block;
   background-color: black;
+  /* height: 100%; */
 }
 
 #container {
   position: relative;
+  overflow-x: hidden;
+  background-color: black;
 }
-#container canvas,
+
+.dbody {
+  border: 10px solid #7e0152;
+  color: white;
+}
+
 #overlay,
 #overlay-rain {
   position: absolute;
@@ -66,19 +67,23 @@ canvas {
   }
 }
 
-p {
+#soc {
   padding: 20px;
   font-size: 2em;
   text-align: center;
 }
 
-a {
+#soc a,
+#cv a {
   margin: 5px;
   color: #ffe396;
-  font-family: 'Inconsolata';
+  font-family: "Inconsolata";
 }
 
 #cv {
+  padding: 20px;
+  font-size: 2em;
+  text-align: center;
   color: aliceblue;
   font-size: 1em;
   margin-top: 0;
@@ -86,6 +91,9 @@ a {
 }
 
 #bio {
+  padding: 20px;
+  font-size: 2em;
+  text-align: center;
   color: aliceblue;
   font-size: 1.1em;
   padding-bottom: 0;
@@ -169,4 +177,147 @@ a {
   100% {
     opacity: 0;
   }
+}
+
+.tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2%;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  cursor: pointer;
+  padding: 1%;
+  margin: 1%;
+  transition: 0.3s;
+  background-color: transparent;
+  color: #7e0152;
+  border: 2px solid #7e0152;
+  font-size: 1.2em;
+  width: 12em;
+  font-family: "Inconsolata";
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  color: #ffb0d9;
+  border: 2px solid #ffb0d9;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  color: #ffb0d9;
+  border: 2px solid #ffb0d9;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border-top: none;
+}
+.tabcontent {
+  animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 2%;
+}
+.nittlogo {
+  width: 18vw;
+  margin: 50px;
+}
+.culogo {
+  width: 25vw;
+  margin: 0;
+}
+@media only screen and (max-width: 700px) {
+  .logos {
+    padding: 5%;
+  }
+  .nittlogo {
+    padding: 10%;
+    margin: 0;
+    width: 48vw;
+  }
+  .culogo {
+    padding: 10%;
+    margin: 0;
+    width: 65vw;
+  }
+}
+.u-cap {
+  font-family: "Inconsolata";
+  font-size: 1.5em;
+  text-align: center;
+  font-weight: bold;
+}
+
+.u-cap a {
+  color: #ffe396;
+}
+.exp-block {
+  border: 5px solid #7e0152;
+  width: 80%;
+  margin: auto;
+  padding: 2em;
+}
+
+.ex-title {
+  font-weight: bolder;
+  font-family: "Inconsolata";
+  font-size: 2.2em;
+  padding: 0.6em;
+}
+
+.ex-dur {
+  font-weight: bolder;
+  font-family: "Inconsolata";
+  float: right;
+  font-size: 0.7em;
+}
+
+li {
+  font-family: "Inconsolata";
+  font-size: 1.5em;
+  margin: 0.6em;
+}
+
+@media only screen and (max-width: 700px) {
+  .ex-title {
+    font-weight: bolder;
+    font-family: "Inconsolata";
+    font-size: 2.2em;
+    text-align: center;
+  }
+
+  .ex-dur {
+    font-weight: bolder;
+    font-family: "Inconsolata";
+    /* text-align: center; */
+    /* float: center; */
+    font-size: 0.5em;
+  }
+}
+.ex-links {
+  color: #ffe396;
+  font-family: "Inconsolata";
+  font-size: 1.2em;
+  font-style: italic;
 }
