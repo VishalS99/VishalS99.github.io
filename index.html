@@ -13,6 +13,8 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link rel="stylesheet" href="index.css" />
     <script
       src="https://code.jquery.com/jquery-1.12.4.min.js"
@@ -22,6 +24,8 @@
   </head>
 
   <body>
+    <button onclick="scrollBottom()" id="scrollbtn"> <i class="fa fa-arrow-circle-down"></i></button>
+
     <div id="container" class="dheader">
       <div id="overlay-rain back-row-toggle splat-toggle">
         <div class="rain front-row"></div>
@@ -60,7 +64,6 @@
     <div id="container" class="dbody">
       <div class="tab">
         <button id="defaultTab"  class="tablinks" onclick="openTab(event, 'Education')">
-          
           EDUCATION
         </button>
         <button
@@ -99,7 +102,7 @@
       <div id="Experience" class="tabcontent">
         <div class="exp-block">
           
-          <h1 class="ex-title">SDE INTERN - Oracle India<span class="ex-dur">May - June 2020</span></h1>
+          <h1 class="ex-title">SDE INTERN- Oracle India<span class="ex-dur">May - June 2020</span></h1>
           <p class="ex-desc">
             <ul>
               <li>Interned with the Identity Management group</li>
@@ -149,6 +152,7 @@
     </div>
   </body>
   <script>
+    
     $("#defaultTab").click();
 
     function openTab(e, tab) {
@@ -164,6 +168,20 @@
       e.target.className += " active";
       console.log(e.target.className);
     }
+
+    function scrollBottom(){
+      document.getElementsByClassName("dbody")[0].scrollIntoView({});
+      $("#scrollbtn").html('<i class="fa fa-arrow-circle-up"></i>')
+      $("#scrollbtn").attr("onclick", "scrollToTop()");
+    }
+    function scrollToTop(){
+      document.getElementsByClassName("dheader")[0].scrollIntoView({});
+      $("#scrollbtn").html('<i class="fa fa-arrow-circle-down"></i>')
+      $("#scrollbtn").attr("onclick", "scrollBottom()");
+      console.log($(this))
+    }
+
+    
   </script>
   <script src="design.js"></script>
   <script src="rain.js"></script>
