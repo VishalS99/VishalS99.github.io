@@ -1,0 +1,97 @@
+/* #082032
+#2C394B
+#334756
+#FF4C29 */
+html,
+.row {
+  height: 100vh;
+}
+
+body {
+  overflow: hidden;
+}
+
+section {
+  background-color: #051420;
+}
+
+
+
+i {
+  color: #2680c5;
+  font-size: larger;
+}
+
+i:hover {
+  color: #17507c;
+}
+
+/* .associations {
+  position: relative;
+  margin-top: 50%;
+} */
+.pronoun {
+  font-size: small;
+  margin-left: 3%;
+}
+
+.bio-card {
+  padding: 5% 10% 5% 10% !important;
+}
+
+.bio-title {
+  position: absolute;
+  top: -15%;
+  font-size: 2em;
+  padding-left: 3%;
+  padding-right: 3%;
+  background-color: #051420;
+  width: 60%;
+}
+
+.nav-link {
+  color: #2680c5 !important;
+}
+
+.nav-link:hover {
+  color: #17507c !important;
+}
+
+.assoc {
+  margin: auto;
+  padding-top: 20%;
+  width: 80%;
+  /* transition: 0.5s ease; */
+  filter: sepia() saturate(500%) hue-rotate(180deg);
+}
+
+.assoc:hover {
+  filter: none;
+}
+
+.card {
+  background-color: transparent !important;
+  border: 2px solid #2680c5 !important;
+}
+
+.intro {
+  top: 30%;
+  width: 75%;
+  color: lightblue;
+}
+
+.profile-photo {
+  position: relative;
+  margin: auto;
+  top: 15%;
+  border-radius: 5%;
+}
+
+.highlight {
+  color: #17507c;
+  text-decoration: none;
+}
+
+.main {
+  overflow: scroll !important;
+}
