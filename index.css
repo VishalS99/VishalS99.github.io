@@ -52,7 +52,9 @@ i:hover {
 .main {
   height: 100vh;
   overflow: scroll !important;
+  scrollbar-color: #17507c #051420;
 }
+
 
 /* Left and right elements */
 
@@ -76,17 +78,22 @@ i:hover {
   filter: none;
 }
 
+line {
+  stroke-width: 0.3%;
+}
+
 /* Introduction */
 
 .intro {
   top: 30%;
   padding: 5%;
-  width: 90% !important;
   position: relative;
   color: lightblue;
   border-radius: 7px;
+  width: 90% !important;
   border: 2px solid #2680c5;
   background-color: transparent;
+  box-shadow: 0 4px 8px 0 #02080e, 0 6px 20px 0 #02080e;
 }
 
 .pronoun {
@@ -112,9 +119,9 @@ i:hover {
 }
 
 .profile-photo {
-  position: relative;
-  margin: auto;
   top: 20%;
+  margin: auto;
+  position: relative;
   border-radius: 5%;
   /* clip-path: polygon(50% 0%, 0% 100%, 100% 45%); */
 }
@@ -122,28 +129,29 @@ i:hover {
 /* About */
 
 .about-title {
-  position: absolute;
   top: -10%;
+  width: 25%;
   font-size: 2.5em;
   padding-left: 3%;
   padding-right: 3%;
+  position: absolute;
   background-color: #051420;
-  width: 25%;
 }
 
 .skills {
-  position: relative;
   width: 100%;
   height: 100%;
+  position: relative;
 }
 
 .bubble {
-  display: inline-block;
-  background-color: #2680c5;
-  border-radius: 16px;
   padding: 1%;
+  cursor: pointer;
   margin-right: 1%;
   color: #051420;
+  border-radius: 16px;
+  display: inline-block;
+  background-color: #2680c5;
 }
 
 .bubble:hover {
@@ -178,8 +186,12 @@ i:hover {
   position: relative;
 }
 
-.exp-nav>li {
+.exp-link {
   font-size: xx-large;
+}
+
+.exp-link>a {
+  color: #2680c5;
 }
 
 .exp-active {
@@ -272,7 +284,12 @@ i:hover {
 }
 
 .proj-card>p {
-  color: lightgray;
+  color: rgb(196, 194, 194);
+}
+
+.proj-highlight {
+  color: white;
+  font-weight: 500;
 }
 
 /* Photography */
@@ -302,4 +319,34 @@ i:hover {
   color: #2680c5;
   margin-bottom: 3%;
   text-align: center;
+}
+
+/* Footer */
+
+footer {
+  top: 20%;
+  width: 100%;
+  height: 13%;
+  position: relative;
+  color: lightblue;
+  text-align: center;
+  border-top: 1px solid #17507c;
+  box-shadow: 0 4px 8px 0 #02080e, 0 6px 20px 0 #02080e;
+}
+
+footer>p {
+  padding: 5px;
+  word-spacing: 5px;
+  font-weight: 500;
+}
+
+footer>p>a {
+  font-weight: 500;
+  color: lightblue;
+  text-decoration: none;
+}
+
+.heart {
+  font-size: larger;
+  color: rgb(255, 130, 81);
 }
