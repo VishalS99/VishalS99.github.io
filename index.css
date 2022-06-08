@@ -18,12 +18,10 @@ body {
   background-color: #051420 !important;
 }
 
-
 .highlight {
   color: #2680c5;
   text-decoration: none;
 }
-
 
 /* Top navbar */
 
@@ -38,26 +36,6 @@ body {
   color: lightblue !important;
 }
 
-i {
-  color: #2680c5;
-  font-size: larger;
-}
-
-i:hover {
-  color: #17507c;
-}
-
-/* Central Main element */
-
-.main {
-  height: 100vh;
-  overflow: scroll !important;
-  scrollbar-color: #17507c #051420;
-}
-
-
-/* Left and right elements */
-
 .navitems {
   color: #2680c5 !important;
 }
@@ -66,7 +44,31 @@ i:hover {
   color: #17507c !important;
 }
 
+/* Central Main element */
+::-webkit-scrollbar {
+  width: 12px;
+  display: none;
+}
+.main {
+  height: 100vh;
+  overflow: scroll !important;
+  /* scrollbar-color: transparent transparent; */
+}
 
+/* Left and right elements */
+
+.media-item {
+  width: 20%;
+}
+i {
+  color: #2680c5;
+  font-size: larger;
+  width: 100%;
+}
+
+i:hover {
+  color: #17507c;
+}
 .assoc {
   width: 80%;
   margin: auto;
@@ -103,9 +105,9 @@ line {
 }
 
 .bio-title {
-  top: 31%;
-  left: 10%;
-  width: 50%;
+  top: 32%;
+  left: 12%;
+  width: 60%;
   z-index: 100;
   font-size: 2.5em;
   text-align: center;
@@ -171,7 +173,7 @@ line {
 
 .exp-title {
   top: 17%;
-  left: 20%;
+  left: 18%;
   width: 20%;
   z-index: 100;
   font-size: 2.5em;
@@ -190,7 +192,7 @@ line {
   font-size: xx-large;
 }
 
-.exp-link>a {
+.exp-link > a {
   color: #2680c5;
 }
 
@@ -213,7 +215,7 @@ line {
   width: 90%;
 }
 
-.exp-list>li {
+.exp-list > li {
   border: 0;
   font-size: larger;
   color: lightblue;
@@ -223,8 +225,8 @@ line {
 /* Education  */
 
 .edu-div {
-  top: 25%;
-  padding: 3%;
+  top: 15%;
+  padding: 4%;
   position: relative;
   border-radius: 15px;
   border: 2px solid #17507c;
@@ -232,7 +234,7 @@ line {
 }
 
 .edu-title {
-  top: 27%;
+  top: 17%;
   left: 18%;
   width: 20%;
   z-index: 100;
@@ -279,11 +281,11 @@ line {
   box-shadow: 0 4px 8px 0 #02080e, 0 6px 20px 0 #02080e;
 }
 
-.proj-card>h4 {
+.proj-card > h4 {
   color: lightblue;
 }
 
-.proj-card>p {
+.proj-card > p {
   color: rgb(196, 194, 194);
 }
 
@@ -331,16 +333,15 @@ footer {
   color: lightblue;
   text-align: center;
   border-top: 1px solid #17507c;
-  box-shadow: 0 4px 8px 0 #02080e, 0 6px 20px 0 #02080e;
 }
 
-footer>p {
+footer > p {
   padding: 5px;
   word-spacing: 5px;
   font-weight: 500;
 }
 
-footer>p>a {
+footer > p > a {
   font-weight: 500;
   color: lightblue;
   text-decoration: none;
