@@ -25,6 +25,7 @@
       referrerpolicy="no-referrer"
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="index.js"></script>
     <title>Document</title>
   </head>
   <body>
@@ -132,35 +133,31 @@
 
         <!-- Main -->
         <div class="col-md-10 main">
-          <!-- Portfolio  -->
           <div class="row sections">
             <div class="col-md-5">
               <img src="me.png" class="img-fluid profile-photo" alt="" />
             </div>
-            <!-- Intro -->
             <div class="col-md-7">
-              <div class="card m-auto intro">
-                <div class="card-body bio-card">
-                  <h5 class="card-title bio-title">
-                    Vishal Saranathan<span class="pronoun darken"
-                      >(He/Him)</span
-                    >
-                  </h5>
-                  <p class="card-text bio-card-text">
-                    A Masters student pursuing Computer Science at
-                    <a
-                      class="highlight"
-                      href="https://www.engineering.columbia.edu/"
-                      >Columbia University</a
-                    >; <br />
-                    Specialization in the domain of Computer Vision and Machine
-                    Learning; <br />
-                    <!-- A Software and Machine Learning engineering - internships at
-                    <span class="highlight">Oracle</span> and
-                    <span class="highlight">Sutherland</span> <br />
-                    An avid photographer -->
-                  </p>
-                </div>
+              <!--  -->
+
+              <h5 class="bio-title">
+                Vishal Saranathan<span class="pronoun darken">(He/Him)</span>
+              </h5>
+              <div class="container intro">
+                <p class="bio-card-text">
+                  A Masters student pursuing Computer Science at
+                  <a
+                    class="highlight"
+                    href="https://www.engineering.columbia.edu/"
+                    >Columbia University</a
+                  >; <br />
+                  Specialization in the domain of Computer Vision and Machine
+                  Learning; <br />
+                  <!-- A Software and Machine Learning engineering - internships at
+                  <span class="highlight">Oracle</span> and
+                  <span class="highlight">Sutherland</span> <br />
+                  An avid photographer -->
+                </p>
               </div>
             </div>
           </div>
@@ -193,8 +190,8 @@
 
           <!-- Experience -->
           <div class="sections">
+            <h5 class="exp-title">Experience</h5>
             <div class="container exp-div">
-              <h5 class="exp-title">Experience</h5>
               <div class="row sections">
                 <div class="col-md-2">
                   <nav class="navbar bg-transparent">
@@ -258,15 +255,15 @@
           </div>
           <!-- Education -->
           <div class="sections">
+            <h5 class="edu-title">Education</h5>
             <div class="container edu-div">
-              <h5 class="edu-title">Education</h5>
               <div class="row">
                 <div class="col-md-6">
                   <div class="row">
                     <div class="col-md-3 text-center">
                       <img
                         src="associations/cu.png"
-                        style="width: 80%; padding: 10%"
+                        style="width: 90%; padding: 10%"
                         class="img-fluid"
                         alt=""
                       />
@@ -311,7 +308,7 @@
                     <div class="col-md-3 text-center">
                       <img
                         src="associations/nitt.png"
-                        style="width: 80%; padding: 10%"
+                        style="width: 90%; padding: 10%"
                         class="img-fluid"
                         alt=""
                       />
@@ -505,72 +502,4 @@
       </div>
     </div>
   </body>
-  <script>
-    const skills = ["C++", "Javascript", "Python"];
-    $(document).ready(() => {
-      $(".me").click((e) => {
-        $(".nav-link").removeClass("active");
-        $(".nav-link").addClass("navitems");
-        $(".me").removeClass("navitems");
-        $(".me").addClass("active");
-        $(".main").animate(
-          {
-            scrollTop: 0,
-          },
-          500
-        );
-      });
-      $(".exp").click((e) => {
-        $(".nav-link").removeClass("active");
-        $(".nav-link").addClass("navitems");
-        $(".exp").removeClass("navitems");
-        $(".exp").addClass("active");
-        $(".main").animate(
-          {
-            scrollTop: $(window).height(),
-          },
-          500
-        );
-      });
-      $(".edu").click((e) => {
-        $(".nav-link").removeClass("active");
-        $(".nav-link").addClass("navitems");
-        $(".edu").removeClass("navitems");
-        $(".edu").addClass("active");
-        $(".main").animate(
-          {
-            scrollTop: $(window).height() * 2,
-          },
-          500
-        );
-      });
-      $(".proj").click((e) => {
-        $(".nav-link").removeClass("active");
-        $(".nav-link").addClass("navitems");
-        $(".proj").removeClass("navitems");
-        $(".proj").addClass("active");
-        $(".main").animate(
-          {
-            scrollTop: $(window).height() * 3,
-          },
-          500
-        );
-      });
-      $(".photo").click((e) => {
-        $(".nav-link").removeClass("active");
-        $(".nav-link").addClass("navitems");
-        $(".photo").removeClass("navitems");
-        $(".photo").addClass("active");
-        $(".main").animate(
-          {
-            scrollTop: $(window).height() * 4,
-          },
-          500
-        );
-      });
-      skills.forEach((e) => {
-        $(".skills").append(`<div class="bubble">${e}</div>`);
-      });
-    });
-  </script>
 </html>
