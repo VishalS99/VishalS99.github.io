@@ -45,29 +45,29 @@ $(document).ready(() => {
 
   $(".exp-link").on("click", function () {
     let data_id = $(this).attr("data-exp");
-    $(".exp-headlines-1").html(exp[data_id]["role"]);
+    $(".exp-1").html(exp[data_id]["role"]);
     let text =
       exp[data_id]["company"] +
-      " <span>&#8728;</span> " +
+      " <span>&#8594;</span> " +
       exp[data_id]["type"] +
-      " <span>&#8728;</span> " +
+      " <span>&#8594;</span> " +
       exp[data_id]["location"] +
-      " <span>&#8728;</span> " +
+      " <span>&#8594;</span> " +
       exp[data_id]["duration"];
-    $(".exp-headlines-2").html(text);
+    $(".exp-2").html(text);
     $(".exp-logo").attr("src", exp[data_id]["logo"]);
-    $(".exp-list").empty();
+    $(".exp-desc").empty();
     $(".exp-tech").empty();
     exp[data_id]["desc"].forEach((d) => {
-      $(".exp-list").append(
+      $(".exp-desc").append(
         `
         <li class="list-group-item">
-          <span>&#8728;</span> ${d}
+          <span>&#8594;</span> ${d}
         </li>
         `
       );
     });
-    $(".exp-list").append(`<li class="list-group-item exp-tech"></li>`);
+    $(".exp-desc").append(`<li class="list-group-item exp-tech"></li>`);
     exp[data_id]["tech"].forEach((d) => {
       $(".exp-tech").append(
         `
@@ -80,7 +80,7 @@ $(document).ready(() => {
     $(this).children().addClass("exp-active");
   });
 
-  projects.forEach((d) => {
+  projects.forEach((d, ind) => {
     let button =
       d["link"] != ""
         ? `<a class="btn btn-outline-info" target="_blank" href='${d["link"]}'>Code</a></div></div>`
@@ -98,6 +98,10 @@ $(document).ready(() => {
           ${button}
       `
     );
+    $(".mobile-proj").append(
+      `<li class="list-group-item"><span>${ind}.</span> <a target="_blank" class="proj-list"
+       href="${d["link"]? d["link"]: "#"}">${d["title"]}</li>`
+    )
   });
 
   $(".me").click((e) => {

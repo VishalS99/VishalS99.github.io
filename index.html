@@ -1,182 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="Portfolio of Vishal Saranathan">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="Portfolio of Vishal Saranathan">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Vishal Saranathan</title>
+  <title>Vishal Saranathan</title>
 
-    <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="favicon_io/site.webmanifest">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="favicon_io/site.webmanifest">
 
-    <!-- Bootstrap and CSS files -->
-    <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-    crossorigin="anonymous"
-    />
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+  <!-- Bootstrap and CSS files -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="index.css" />
-
-    <!-- Jquery and JS files  -->
-    <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"
-    ></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script type="module" src="js/data.js"></script>
-    <script type="module" src="js/index.js"></script>
-  </head>
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+  <link rel="stylesheet" href="index.css" />
 
 
-  <body>
-    <div class="container-fluid">
-      <!-- Nav -->
-      <nav class="navbar navbar-expand top-nav">
-        <ul class="navbar-nav m-auto">
+  <!-- Jquery and JS files  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <script type="module" src="js/data.js"></script>
+  <script type="module" src="js/index.js"></script>
+</head>
+
+
+<body>
+  <div class="container-fluid">
+    <!-- Nav -->
+    <nav class="navbar navbar-expand-lg top-nav">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
+        aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarToggler">
+        <ul class="navbar-nav m-auto" style="background-color: #051420">
           <li class="nav-item">
             <a class="nav-link px-4 me active" href="#">Me</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link navitems px-4 exp" href="#experience"
-              >Experience</a
-            >
+            <a class="nav-link navitems px-4 exp" href="#experience">Experience</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link navitems px-4 edu" href="#education"
-              >Education</a
-            >
+            <a class="nav-link navitems px-4 edu" href="#education">Education</a>
           </li>
           <li class="nav-item">
             <a class="nav-link navitems px-4 proj" href="#projects">Projects</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link navitems px-4 photo" href="#photography"
-              >Photograhy</a
-            >
+            <a class="nav-link navitems px-4 photo" href="#photography">Photograhy</a>
           </li>
           <li class="nav-item">
-            <a
-              class="btn btn-outline-info px-4"
-              style="color: lightblue"
-              href="https://bit.ly/vishalsaranathan-resume"
-              target="_blank"
-            >
+            <a class="btn btn-outline-info px-4" style="color: lightblue" href="https://bit.ly/vishalsaranathan-resume"
+              target="_blank">
               Resume
             </a>
           </li>
         </ul>
-      </nav>
-      <!-- <nav class="text-center">
+      </div>
+    </nav>
+    <!-- <nav class="text-center">
         <small style="font-size: larger; color: white">Under-development</small>
       </nav> -->
 
-      <div class="row">
-        <!-- Social Media -->
-        <div class="col-md-1">
-          <div class="media-nav">
-            <nav class="navbar bg-transparent">
-              <ul class="nav navbar-nav">
-                <li class="nav-item px-3 pb-3">
-                  <svg height="58vh" xmlns="http://www.w3.org/2000/svg">
-                    <line x1="0%" y1="5%" x2="0%" y2="96%" stroke="#2680c5" />
-                  </svg>
-                </li>
-                <li class="nav-item media-item">
-                  <a
-                    class="nav-link px-2 pb-3"
-                    href="mailto: vishal.saranathan@columbia.edu"
-                    target="_blank"
-                  >
+    <div class="row">
+      <!-- Social Media -->
+      <div class="col-1 s1">
+        <div class="media-nav">
+          <nav class="navbar bg-transparent">
+            <ul class="nav navbar-nav">
+              <li class="nav-item px-3 pb-3">
+                <svg height="58vh" xmlns="http://www.w3.org/2000/svg">
+                  <line x1="0%" y1="5%" x2="0%" y2="96%" stroke="#2680c5" />
+                </svg>
+              </li>
+              <li class="nav-item media-item">
+                <a class="nav-link px-2 pb-3" href="mailto: vishal.saranathan@columbia.edu" target="_blank">
+                  <i class="fa-solid fa-envelope-circle-check"></i>
+                </a>
+              </li>
+              <li class="nav-item media-item">
+                <a class="nav-link px-2 pb-3" href="https://github.com/VishalS99" target="_blank">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </li>
+              <li class="nav-item media-item">
+                <a class="nav-link px-2 pb-3" href="https://www.linkedin.com/in/vishalsaranathan/" target="_blank">
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+              </li>
+              <li class="nav-item media-item">
+                <a class="nav-link px-2 pb-3" href="https://www.instagram.com/_vishal_here_/" target="_blank">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+              </li>
+              <li class="nav-item media-item">
+                <a class="nav-link px-2 pb-3" href="https://twitter.com/vishy0199" target="_blank">
+                  <i class="fa-brands fa-twitter"></i>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Main -->
+      <div class="col-10 main s2">
+        <!-- Home -->
+        <div class="sections">
+          <div class="row">
+          <div class="col-md-5 text-center">
+            <img src="me.png" class="img-fluid profile-photo" alt="" />
+          </div>
+          <div class="col-md-7">
+            <h5 class="bio-title">
+              <span class="bio-smalltext">Hey, I am  </span><br><span>Vishal Saranathan<span class="pronoun darken">(He/Him)</span>
+            </h5>
+            <div class="container intro">
+              <p class="bio-card-text">
+                &#8594; A Masters student pursuing Computer Science at
+                <a class="highlight" href="https://www.engineering.columbia.edu/">Columbia University</a>; <br />
+                &#8594; Software and Machine Learning engineer who loves to play games and shoot photographs<br />
+                <!-- &#8594;   -->
+                <span class="branding"><br>
+                  <a href="mailto: vishal.saranathan@columbia.edu" target="_blank">
                     <i class="fa-solid fa-envelope-circle-check"></i>
                   </a>
-                </li>
-                <li class="nav-item media-item">
-                  <a
-                    class="nav-link px-2 pb-3"
-                    href="https://github.com/VishalS99"
-                    target="_blank"
-                  >
+                  <a href="https://github.com/VishalS99" target="_blank">
                     <i class="fa-brands fa-github"></i>
                   </a>
-                </li>
-                <li class="nav-item media-item">
-                  <a
-                    class="nav-link px-2 pb-3"
-                    href="https://www.linkedin.com/in/vishalsaranathan/"
-                    target="_blank"
-                  >
+                  <a href="https://www.linkedin.com/in/vishalsaranathan/" target="_blank">
                     <i class="fa-brands fa-linkedin"></i>
                   </a>
-                </li>
-                <li class="nav-item media-item">
-                  <a
-                    class="nav-link px-2 pb-3"
-                    href="https://www.instagram.com/_vishal_here_/"
-                    target="_blank"
-                  >
+                  <a href="https://www.instagram.com/_vishal_here_/" target="_blank">
                     <i class="fa-brands fa-instagram"></i>
                   </a>
-                </li>
-                <li class="nav-item media-item">
-                  <a
-                    class="nav-link px-2 pb-3"
-                    href="https://twitter.com/vishy0199"
-                    target="_blank"
-                  >
+                  <a href="https://twitter.com/vishy0199" target="_blank">
                     <i class="fa-brands fa-twitter"></i>
                   </a>
-                </li>
-              </ul>
-            </nav>
+                </span>
+              </p>
+            </div>
+          </div>
           </div>
         </div>
-
-        <!-- Main -->
-        <div class="col-md-10 main">
-          <!-- Home -->
-          <div class="row sections">
-            <div class="col-md-5">
-              <img src="me.png" class="img-fluid profile-photo" alt="" />
-            </div>
-            <div class="col-md-7">
-              <h5 class="bio-title">
-                Vishal Saranathan<span class="pronoun darken">(He/Him)</span>
-              </h5>
-              <div class="container intro">
-                <p class="bio-card-text">
-                  A Masters student pursuing Computer Science at
-                  <a
-                    class="highlight"
-                    href="https://www.engineering.columbia.edu/"
-                    >Columbia University</a
-                  >; <br />
-                  Specialization in the domain of Computer Vision and Machine
-                  Learning; <br />
-                  <!-- A Software and Machine Learning engineering - internships at
-                  <span class="highlight">Oracle</span> and
-                  <span class="highlight">Sutherland</span> <br />
-                  An avid photographer -->
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- About  -->
-          <!-- <div class="row sections">
+        <!-- About  -->
+        <!-- <div class="row sections">
             <div class="col-md-12">
               <div class="card m-auto intro">
                 <div class="card-body bio-card">
@@ -202,252 +183,191 @@
             </div>
           </div> -->
 
-          <!-- Experience -->
-          <div class="sections">
-            <h5 class="exp-title">Experience</h5>
-            <div class="container exp-div">
-              <div class="row sections">
-                <div class="col-md-2">
-                  <nav class="navbar bg-transparent">
-                    <ul class="nav navbar-nav exp-nav"></ul>
-                  </nav>
-                </div>
-                <div class="col-md-10">
-                  <div class="row">
-                    <div class="col-md-3 text-center">
-                      <img
-                        src="associations/oracle.png"
-                        style="width: 70%; padding: 0 10% 10% 10%"
-                        class="img-fluid exp-logo"
-                        alt=""
-                      />
-                    </div>
-                    <div class="col-md-9">
-                      <p class="exp-headlines-1">Software Engineer</p>
-                      <p class="exp-headlines-2">
-                        Sutherland <span>&#8728;</span> Internship
-                        <span>&#8728;</span> Remote <span>&#8728;</span> May
-                        2020 (2 months)
-                      </p>
-                    </div>
+        <!-- Experience -->
+        <div class="sections">
+          <h5 class="exp-title">Experience</h5>
+          <div class="container exp-div ">
+            <div class="row">
+              <div class="col-md-2">
+                <nav class="navbar bg-transparent">
+                  <ul class="nav navbar-nav exp-nav"></ul>
+                </nav>
+              </div>
+              <div class="col-10">
+                <div class="row">
+                  <div class="col-md-3 text-center">
+                    <img src="associations/oracle.png" class="img-fluid exp-logo" alt="" />
                   </div>
-                  <div class="row">
-                    <div class="container">
-                      <ul class="list-group exp-list">
-                        <li class="list-group-item">
-                          <span>&#8728;</span> Collaborated with the Identity
-                          Management Group and worked on Oracle Unified
-                          Directory (OUD)
-                        </li>
-                        <li class="list-group-item">
-                          <span>&#8728;</span> Created and unit-tested 5
-                          user-defined functions for the Helm Charts for
-                          Kubernetes of OUD servers and replication servers
-                        </li>
-                        <li class="list-group-item">
-                          <div class="bubble">Docker</div>
-                          <div class="bubble">Kubernetes</div>
-                          <div class="bubble">Helm Charts</div>
-                        </li>
-                      </ul>
-                    </div>
+                  <div class="col-md-9">
+                    <p class="exp-headlines-1 exp-1">Software Engineer</p>
+                    <p class="exp-headlines-2 exp-2">
+                      Sutherland <span>&#8728;</span> Internship
+                      <span>&#8728;</span> Remote <span>&#8728;</span> May
+                      2020 (2 months)
+                    </p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="container">
+                    <ul class="list-group exp-list exp-desc">
+                      <li class="list-group-item">
+                        <span>&#8594;</span> Collaborated with the Identity
+                        Management Group and worked on Oracle Unified
+                        Directory (OUD)
+                      </li>
+                      <li class="list-group-item">
+                        <span>&#8594;</span> Created and unit-tested 5
+                        user-defined functions for the Helm Charts for
+                        Kubernetes of OUD servers and replication servers
+                      </li>
+                      <li class="list-group-item">
+                        <div class="bubble">Docker</div>
+                        <div class="bubble">Kubernetes</div>
+                        <div class="bubble">Helm Charts</div>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-
-          <!-- Education -->
-          <div class="sections">
-            <h5 class="edu-title">Education</h5>
-            <div class="container edu-div">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="row">
-                    <div class="col-md-3 text-center">
-                      <img
-                        src="associations/cu.png"
-                        style="width: 90%; padding: 10%"
-                        class="img-fluid"
-                        alt=""
-                      />
-                    </div>
-                    <div class="col-md-9">
-                      <p class="exp-headlines-1">Master of Science</p>
-                      <p class="exp-headlines-3">Columbia University</p>
-                      <p class="exp-headlines-2">
-                        Computer Science <br />
-                        Specialization - Computer Vision and Machine Learning
-                      </p>
-                    </div>
-                  </div>
-                  <!-- <div class="row">
-                    <div class="container">
-                      <ul class="list-group exp-list">
-                        <li class="list-group-item">
-                          <span>&#8728;</span> Built a computer vision module
-                          for Sutherland Extract to auto-align skewed
-                          photographed documents
-                        </li>
-                        <li class="list-group-item">
-                          <span>&#8728;</span> Developed a custom trained
-                          UNet–based segmentation module in Keras and OpenCV and
-                          a temporary flask server for project presentation
-                        </li>
-                        <li class="list-group-item">
-                          <span>&#8728;</span> Achieved a 40% accuracy
-                          improvement over the previous implementation
-                        </li>
-                        <li class="list-group-item">
-                          <div class="bubble">Pytorch</div>
-                          <div class="bubble">Tensorflow</div>
-                          <div class="bubble">Python</div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div> -->
-                </div>
-                <div class="col-md-6">
-                  <div class="row">
-                    <div class="col-md-3 text-center">
-                      <img
-                        src="associations/nitt.png"
-                        style="width: 90%; padding: 10%"
-                        class="img-fluid"
-                        alt=""
-                      />
-                    </div>
-                    <div class="col-md-9">
-                      <p class="exp-headlines-1">Bachelor of Technology</p>
-                      <p class="exp-headlines-3">
-                        National Institute of Technology, Tiruchirappalli
-                      </p>
-                      <p class="exp-headlines-2">
-                        Computer Science | Minor - Management Studies
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Projects -->
-          <div class="sections">
-            <h5 class="proj-title">Projects</h5>
-            <div class="container projects-div">
-              <div class="row">
-                
-              </div>
-            </div>
-          </div>
-
-          <!-- Photograhy -->
-          <div class="sections">
-            <h5 class="photo-title">Photography</h5>
-            <div class="container photo-div">
-              <p class="hobby">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Exercitationem ut quia saepe libero, officiis ipsam beatae sed.
-                Ipsum aut asperiores eius, id
-              </p>
-              <div class="row text-center">
-                <div class="col-6">
-                  <img
-                    style="width: 85%"
-                    src="photos/1.png"
-                    alt=""
-                    class="img-fluid rounded"
-                  />
-                </div>
-                <div class="col-6">
-                  <img
-                    style="width: 85%"
-                    src="photos/2.png"
-                    alt=""
-                    class="img-fluid rounded"
-                  />
-                </div>
-                <div class="col-6">
-                  <img
-                    style="width: 85%; margin-top: 5%"
-                    src="photos/3.png"
-                    alt=""
-                    class="img-fluid rounded"
-                  />
-                </div>
-                <div class="col-6">
-                  <img
-                    style="width: 85%"
-                    src="photos/4.png"
-                    alt=""
-                    class="img-fluid rounded"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <!-- Footer -->
-            <footer>
-              <p>
-                Made with <span class="heart"> &hearts;</span> by
-                <a href="https://github.com/VishalS99">Vishal Saranathan</a>
-              </p>
-            </footer>
           </div>
         </div>
 
-        <!-- Associations -->
-        <div class="col-md-1">
-          <div class="associations-nav">
-            <nav class="navbar bg-transparent">
-              <ul class="nav navbar-nav">
-                <li class="nav-item m-auto text-center">
-                  <a class="nav-link" href="https://www.cs.columbia.edu/" target="_blank">
-                    <img
-                      src="associations/cu.png"
-                      class="img-fluid assoc"
-                      alt=""
-                    />
-                  </a>
-                </li>
-                <li class="nav-item m-auto text-center">
-                  <a class="nav-link" href="https://www.nitt.edu/" target="_blank">
-                    <img
-                      src="associations/nitt.png"
-                      class="img-fluid assoc"
-                      alt=""
-                    />
-                  </a>
-                </li>
-                <li class="nav-item m-auto text-center">
-                  <a class="nav-link" href="https://www.oracle.com/in/index.html" target="_blank">
-                  <img
-                    src="associations/oracle.png"
-                    class="img-fluid assoc"
-                    alt=""
-                  /></a>
-                </li>
-                <li class="nav-item m-auto text-center">
-                  <a class="nav-link" href="https://www.sutherlandglobal.com/" target="_blank">
-                  <img
-                    src="associations/sutherland.png"
-                    class="img-fluid assoc"
-                    alt=""
-                  />
-                </li></a>
-              </ul>
-              <svg
-                width="100%"
-                height="30vh"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <line x1="50%" y1="10%" x2="50%" y2="100%" stroke="#2680c5" />
-              </svg>
-            </nav>
+        <!-- Education -->
+        <div class="sections">
+          <h5 class="edu-title">Education</h5>
+          <div class="container edu-div">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-3 text-center">
+                    <img src="associations/cu.png" class="img-fluid edu-images" alt="" />
+                  </div>
+                  <div class="col-md-9">
+                    <p class="exp-headlines-1">Master of Science</p>
+                    <p class="exp-headlines-3">Columbia University</p>
+                    <p class="exp-headlines-2">
+                      Computer Science <br />
+                      Specialization - Computer Vision and Machine Learning
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-3 text-center">
+                    <img src="associations/nitt.png" class="img-fluid edu-images" alt="" />
+                  </div>
+                  <div class="col-md-9">
+                    <p class="exp-headlines-1">Bachelor of Technology</p>
+                    <p class="exp-headlines-3">
+                      National Institute of Technology, Tiruchirappalli
+                    </p>
+                    <p class="exp-headlines-2">
+                      Computer Science | Minor - Management Studies
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="sections">
+          <h5 class="proj-title">Projects</h5>
+          <div class="container projects-div">
+            <p class="mobile-text">Visit my <a href="https://github.com/VishalS99" target="_blank">Github</a>, to view
+              all my projects</p>
+            <ul class="mobile-proj list-group exp-list"></ul>
+            <div class="row"></div>
+          </div>
+        </div>
+
+        <!-- Photograhy -->
+        <div class="sections">
+          <h5 class="photo-title">Photography</h5>
+          <div class="container photo-div">
+            <p class="hobby">
+              I am very passionate about photography 
+              and I roam the streets and travel to fancy locations to capture and add my own spin to it. <br>
+              Do check out my page <a style="display: inline-block; color: lightblue;" href="https://www.instagram.com/_vishal_here_/" target="_blank">_vishal_here_
+              </a> for more!
+            </p>
+            <div class="row text-center">
+              <div class="col-6 desk-photo">
+                <img src="photos/1.png" alt="" class="img-fluid rounded photo-img" />
+              </div>
+              <div class="col-6 desk-photo">
+                <img src="photos/2.png" alt="" class="img-fluid rounded photo-img" />
+              </div>
+              <div class="col-6 desk-photo">
+                <img src="photos/3.png" alt="" class="img-fluid rounded photo-img" />
+              </div>
+              <div class="col-6 desk-photo">
+                <img src="photos/4.png" alt="" class="img-fluid rounded photo-img" />
+              </div>
+            </div>
+            <div class="row text-center mobile-photo">
+              <div class="col-12">
+                <img src="photos/1.png" alt="" class="img-fluid rounded photo-img" />
+              </div>
+              <div class="col-12">
+                <img src="photos/2.png" alt="" class="img-fluid rounded photo-img" />
+              </div>
+              <div class="col-12">
+                <img src="photos/3.png" alt="" class="img-fluid rounded photo-img" />
+              </div>
+              <div class="col-12">
+                <img src="photos/4.png" alt="" class="img-fluid rounded photo-img" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+          <p>
+            Made with <span class="heart"> &hearts;</span> by
+            <a href="https://github.com/VishalS99">Vishal Saranathan</a>
+          </p>
+        </footer>
+      </div>
+
+      <!-- Associations -->
+      <div class="col-1 s3">
+        <div class="associations-nav">
+          <nav class="navbar bg-transparent">
+            <ul class="nav navbar-nav">
+              <li class="nav-item m-auto text-center">
+                <a class="nav-link" href="https://www.cs.columbia.edu/" target="_blank">
+                  <img src="associations/cu.png" class="img-fluid assoc" alt="" />
+                </a>
+              </li>
+              <li class="nav-item m-auto text-center">
+                <a class="nav-link" href="https://www.nitt.edu/" target="_blank">
+                  <img src="associations/nitt.png" class="img-fluid assoc" alt="" />
+                </a>
+              </li>
+              <li class="nav-item m-auto text-center">
+                <a class="nav-link" href="https://www.oracle.com/in/index.html" target="_blank">
+                  <img src="associations/oracle.png" class="img-fluid assoc" alt="" /></a>
+              </li>
+              <li class="nav-item m-auto text-center">
+                <a class="nav-link" href="https://www.sutherlandglobal.com/" target="_blank">
+                  <img src="associations/sutherland.png" class="img-fluid assoc" alt="" />
+              </li></a>
+            </ul>
+            <svg width="100%" height="30vh" xmlns="http://www.w3.org/2000/svg">
+              <line x1="50%" y1="10%" x2="50%" y2="100%" stroke="#2680c5" />
+            </svg>
+          </nav>
         </div>
       </div>
+
     </div>
-  </body>
+  </div>
+</body>
+
+
 </html>
