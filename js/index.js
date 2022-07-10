@@ -4,6 +4,18 @@ $(document).ready(() => {
   $("#bio").html(bio);
   $(".resume").attr("href", resume_url);
   $(".hobby").html(photo_body)
+  if($(window).width() > 767) {
+    $('.top-nav').removeClass('fixed-top');
+  }else{
+    $('.top-nav').addClass('fixed-top');
+  }
+  $(window).on('resize', function() {
+    if($(window).width() > 767) {
+      $('.top-nav').removeClass('fixed-top');
+    }else{
+      $('.top-nav').addClass('fixed-top');
+    }
+  })
   $(".main").scroll((e) => {
     if ($(".main").scrollTop() < $(window).height()) {
       $(".nav-link").removeClass("active");
