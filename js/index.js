@@ -1,6 +1,9 @@
-import { exp, skills, projects } from "./data.js";
+import { exp, skills, projects, bio, resume_url, photo_body } from "./data.js";
 
 $(document).ready(() => {
+  $("#bio").html(bio);
+  $(".resume").attr("href", resume_url);
+  $(".hobby").html(photo_body)
   $(".main").scroll((e) => {
     if ($(".main").scrollTop() < $(window).height()) {
       $(".nav-link").removeClass("active");
@@ -30,6 +33,10 @@ $(document).ready(() => {
     }
   });
 
+  $(document).click(function (event) {
+    $('.navbar-collapse').collapse('hide');
+  });
+
   exp.map((e, index) => {
     $(".exp-nav").append(
       `
@@ -48,11 +55,11 @@ $(document).ready(() => {
     $(".exp-1").html(exp[data_id]["role"]);
     let text =
       exp[data_id]["company"] +
-      " <span>&#8594;</span> " +
+      " <span>&#8728;</span> " +
       exp[data_id]["type"] +
-      " <span>&#8594;</span> " +
+      " <span>&#8728;</span> " +
       exp[data_id]["location"] +
-      " <span>&#8594;</span> " +
+      " <span>&#8728;</span> " +
       exp[data_id]["duration"];
     $(".exp-2").html(text);
     $(".exp-logo").attr("src", exp[data_id]["logo"]);
@@ -99,9 +106,11 @@ $(document).ready(() => {
       `
     );
     $(".mobile-proj").append(
-      `<li class="list-group-item"><span>${ind}.</span> <a target="_blank" class="proj-list"
-       href="${d["link"]? d["link"]: "#"}">${d["title"]}</li>`
-    )
+      `<li class="list-group-item"><span>${
+        ind + 1
+      }.</span> <a class="proj-list" ${!d["link"]? `style="text-decoration: none; pointer-events: none"`: `target="_blank"`}
+       href=${d["link"] ? d["link"] : "#"}>${d["title"]}</li>`
+    );
   });
 
   $(".me").click((e) => {

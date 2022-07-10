@@ -31,6 +31,10 @@ export const exp = [
   },
 ];
 
+export const bio = `&#8594; A Masters student pursuing Computer Science at
+<a class="highlight" href="https://www.engineering.columbia.edu/">Columbia University</a>; <br />
+&#8594; Software and Machine Learning engineer who loves to play games and shoot photographs<br />`;
+
 export const skills = ["C++", "Javascript", "Python"];
 
 export const projects = [
@@ -67,3 +71,17 @@ export const projects = [
     link: "https://github.com/VishalS99/Smart-SQLizer",
   },
 ];
+
+export const resume_url = "https://bit.ly/3PckWRq";
+
+export const photo_body = `I am very passionate about photography. I roam the streets or
+travel to fancy locations to capture and add my own spin to
+it. <br />
+Do check out my page
+<a
+  style="display: inline-block; color: lightblue"
+  href="https://www.instagram.com/_vishal_here_/"
+  target="_blank"
+  >_vishal_here_
+</a>
+for more of my photomania!`
