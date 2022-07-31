@@ -108,9 +108,9 @@ $(document).ready(() => {
       `
       <div class="col-4">
         <div class="proj-card">
-          <h4>
+          <h5>
             ${d["title"]}
-          </h4>
+          </h5>
           <p>
             ${d["desc"]}
           </p>

@@ -61,7 +61,7 @@ export const projects = [
   {
     id: 4,
     title: "Document Requisition Portal",
-    desc: "A web portal for managing university's document request and verification during pandemic, created using <span class='proj-highlight'>NodeJS/Express</span>, <span class='proj-highlight'>ReactJS</span>, <span class='proj-highlight'>SQL (Sequelize)</span>, and deployed on custom servers.",
+    desc: "A web portal for managing university's document request and verification during pandemic, created using <span class='proj-highlight'>NodeJS/Express</span>, <span class='proj-highlight'>ReactJS</span>, <span class='proj-highlight'>SQL</span>, and deployed on custom servers.",
     link: "https://github.com/SpiderNitt/Document-Request-Portal",
   },
   {

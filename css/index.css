@@ -141,7 +141,7 @@ i:hover {
   width: 80%;
   margin: auto;
   padding-top: 20%;
-  filter: sepia() saturate(500%) hue-rotate(180deg);
+  filter: sepia(1) hue-rotate(170deg) saturate(300%) ;
 }
 
 .assoc:hover {
@@ -155,13 +155,13 @@ line {
 /* ## Introduction ## */
 
 .intro {
-  top: 60%;
+  top: 50%;
   padding: 5%;
   position: relative;
   color: lightblue;
   border-radius: 7px;
   font-size: 1.2em;
-  width: 80% !important;
+  width: 90% !important;
   border: 2px solid #2680c5;
   background-color: transparent;
   box-shadow: 0 4px 8px 0 #02080e, 0 6px 20px 0 #02080e;
@@ -174,11 +174,11 @@ line {
 }
 
 .bio-title {
-  top: 63%;
+  top: 55%;
   left: 20%;
   width: 53%;
   z-index: 100;
-  font-size: 2.5em;
+  font-size: 2.2em;
   text-align: center;
   font-weight: 700;
   color: lightblue;
@@ -192,13 +192,18 @@ line {
   color: #17507c;
 }
 .profile-photo {
-  top: 50%;
+  top: 40%;
   margin: auto;
   position: relative;
   border-radius: 5%;
   width: 80%;
-  /* clip-path: polygon(50% 0%, 0% 100%, 100% 45%); */
+  filter: sepia(1) saturate(80%) hue-rotate(170deg) contrast(1.2);
+  transition: filter 500ms linear;
+  -webkit-transition : -webkit-filter 500ms linear
+
+
 }
+.profile-photo:hover {filter: none;}
 
 .bio-smalltext {
   color: gray;
@@ -213,14 +218,17 @@ line {
 /* Mobile Responsive */
 @media screen and (max-width: 767px) {
   .profile-photo {
-    top: 10%;
+    top: 15%;
     width: 80%;
     margin: auto;
     position: relative;
     border-radius: 5%;
     clip-path: circle();
+    filter: none;
   }
-
+  .branding {
+    display: block;
+  }
   .branding > a > i {
     display: inline;
   }
@@ -358,11 +366,11 @@ line {
 /* Mobile Responsive */
 @media screen and (max-width: 767px) {
   .exp-div {
-    top: 0;
+    top: 10%;
     text-align: center;
   }
   .exp-title {
-    top: 2%;
+    top: 12%;
     left: 25%;
     width: 50%;
     font-size: 2em;
@@ -490,17 +498,21 @@ line {
   box-shadow: 0 4px 8px 0 #02080e, 0 6px 20px 0 #02080e;
 }
 
-.proj-card > h4 {
-  color: lightblue;
+.proj-card > h5 {
+  color: white;
 }
 
 .proj-card > p {
   color: rgb(196, 194, 194);
+  font-size: 0.9em;
 }
 
 .proj-highlight {
   color: white;
   font-weight: 500;
+  border: 2px solid lightblue;
+  border-radius: 8px;
+  padding: 1px;
 }
 .mobile-text {
   color: #2680c5;
@@ -542,7 +554,7 @@ line {
 /* ## Photography ## */
 
 .photo-div {
-  top: 5%;
+  top: 10%;
   padding: 3%;
   position: relative;
   border-radius: 15px;
@@ -551,8 +563,8 @@ line {
 }
 
 .photo-title {
-  top: 7%;
-  left: 18%;
+  top: 12%;
+  left: 15%;
   width: 25%;
   z-index: 100;
   font-size: 2.5em;
@@ -568,12 +580,12 @@ line {
   color: #2680c5;
   margin-bottom: 3%;
   text-align: center;
-  font-size: 1.2em;
+  font-size: 1.0em;
 }
 
 .photo-img {
-  width: 80%;
-  padding: 3%;
+  width: 100%;
+  /* padding: 3%; */
 }
 
 .desk-photo {
@@ -621,7 +633,6 @@ line {
 /* ## Footer ## */
 
 footer {
-  top: 30%;
   width: 100%;
   height: 10%;
   position: relative;
