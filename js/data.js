@@ -1,6 +1,20 @@
 export const exp = [
   {
     id: 1,
+    role: "Graduate Research Assistant",
+    company: "Columbia University",
+    type: "Research",
+    location: "New York",
+    duration: "June 2022 (Present)",
+    logo: "associations/cu.png",
+    desc: [
+      "Collaborated with the Digital Video and Multimedia (DVMM) Lab on improving multi-modal deep learning models",
+      "Working with Prof. Shih-Fu Chang towards analyzing and extending Visual Commonsense Reasoning dataset; Benchmarking the dataset to evaluate improvements",
+    ],
+    tech: ["PyTorch", "Python"],
+  },
+  {
+    id: 2,
     role: "Software Engineer",
     company: "Oracle",
     type: "Internship",
@@ -14,7 +28,7 @@ export const exp = [
     tech: ["Docker", "Kubernetes", "Helm Charts"],
   },
   {
-    id: 2,
+    id: 3,
     role: "Machine Learning Engineer",
     company: "Sutherland Global",
     type: "Internship",
@@ -33,7 +47,8 @@ export const exp = [
 
 export const bio = `&#8594; A Masters student pursuing Computer Science at
 <a class="highlight" href="https://www.engineering.columbia.edu/">Columbia University</a>; <br />
-&#8594; Software and Machine Learning engineer who loves to play games and shoot photographs<br />`;
+&#8594; A coffeeholic trying to decipher the world through code, quick captures and magic &#10024;<br />
+`;
 
 export const skills = ["C++", "Javascript", "Python"];
 
@@ -42,13 +57,13 @@ export const projects = [
     id: 1,
     title:
       "Performance Modeling and Analysis of Unsupervised Domain Adaptation",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur blanditiis ratione iure amet. Amet quaerat delectus reprehenderit tempora est fuga, esse minus laudantium laborum dignissimos autem ",
-    link: "",
+    desc: "Performance analysis of state-of-the-art <span class='proj-highlight'>image-to-image translation (i2i)</span> neural network architectures on the task of <span class='proj-highlight'>domain adaptation</span> in computer vision. A detailed study using multiple compute resources, datasets, architectures and frameworks was made to analyse the impact of these variations on performance metrics.",
+    link: "https://github.com/VishalS99/COMS6998-Project",
   },
   {
     id: 2,
     title: "Real-time detection of vehicular accidents using CCTV footage ",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur blanditiis ratione iure amet. Amet quaerat delectus reprehenderit tempora est fuga, esse minus laudantium laborum dignissimos autem ",
+    desc: " Modeling and comparing two approaches that leverage the power of computer vision and supervised deep learning to detect accidents in real-time. A setup capitalizing on various <span class='proj-highlight'>spatio-temporal features</span> extracted from the CCTV surveillance footage, providing a robust method by achieving low false alarm rate while ensuring a high detection rate.",
     link: "",
   },
   {
@@ -74,9 +89,7 @@ export const projects = [
 
 export const resume_url = "https://bit.ly/3PckWRq";
 
-export const photo_body = `I am very passionate about photography. I roam the streets or
-travel to fancy locations to capture and add my own spin to
-it. <br />
+export const photo_body = `<em>A budding photographer aimlessly wandering the wonderlands to capture the moment! </em><br />
 Do check out my page
 <a
   style="display: inline-block; color: lightblue"

@@ -1,7 +1,41 @@
 import { exp, skills, projects, bio, resume_url, photo_body } from "./data.js";
 
+function populateExperience(data) {
+  $(".exp-1").html(data["role"]);
+  let text =
+      data["company"] +
+      " <span>&#8728;</span> " +
+      data["type"] +
+      " <span>&#8728;</span> " +
+      data["location"] +
+      " <span>&#8728;</span> " +
+      data["duration"];
+  $(".exp-2").html(text);
+  $(".exp-logo").attr("src", data["logo"]);
+  $(".exp-desc").empty();
+  $(".exp-tech").empty();
+  data["desc"].forEach((d) => {
+    $(".exp-desc").append(
+      `
+      <li class="list-group-item">
+        <span>&#8594;</span> ${d}
+      </li>
+      `
+    );
+  });
+  $(".exp-desc").append(`<li class="list-group-item exp-tech"></li>`);
+  data["tech"].forEach((d) => {
+    $(".exp-tech").append(
+      `
+          <div class="bubble">${d}</div>
+        `
+    );
+  });
+}
+
 $(document).ready(() => {
   $("#bio").html(bio);
+  populateExperience(exp[0])
   $(".resume").attr("href", resume_url);
   $(".hobby").html(photo_body)
   if($(window).width() > 767) {
@@ -64,36 +98,7 @@ $(document).ready(() => {
 
   $(".exp-link").on("click", function () {
     let data_id = $(this).attr("data-exp");
-    $(".exp-1").html(exp[data_id]["role"]);
-    let text =
-      exp[data_id]["company"] +
-      " <span>&#8728;</span> " +
-      exp[data_id]["type"] +
-      " <span>&#8728;</span> " +
-      exp[data_id]["location"] +
-      " <span>&#8728;</span> " +
-      exp[data_id]["duration"];
-    $(".exp-2").html(text);
-    $(".exp-logo").attr("src", exp[data_id]["logo"]);
-    $(".exp-desc").empty();
-    $(".exp-tech").empty();
-    exp[data_id]["desc"].forEach((d) => {
-      $(".exp-desc").append(
-        `
-        <li class="list-group-item">
-          <span>&#8594;</span> ${d}
-        </li>
-        `
-      );
-    });
-    $(".exp-desc").append(`<li class="list-group-item exp-tech"></li>`);
-    exp[data_id]["tech"].forEach((d) => {
-      $(".exp-tech").append(
-        `
-            <div class="bubble">${d}</div>
-          `
-      );
-    });
+    populateExperience(exp[data_id])
     $(".exp-link a").removeClass("exp-active");
     $(".exp-link a").css("color", "#2680c5");
     $(this).children().addClass("exp-active");
