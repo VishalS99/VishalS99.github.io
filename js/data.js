@@ -57,13 +57,13 @@ export const projects = [
     id: 1,
     title:
       "Performance Modeling and Analysis of Unsupervised Domain Adaptation",
-    desc: "Performance analysis of state-of-the-art <span class='proj-highlight'>image-to-image translation (i2i)</span> neural network architectures on the task of <span class='proj-highlight'>domain adaptation</span> in computer vision. A detailed study using multiple compute resources, datasets, architectures and frameworks was made to analyse the impact of these variations on performance metrics.",
+    desc: "Performance analysis of SOTA <span class='proj-highlight'>image-to-image translation (i2i)</span> networks for the task of <span class='proj-highlight'>domain adaptation</span> in computer vision. A detailed study using multiple compute resources, datasets, architectures and frameworks was made to analyse the impact of these variations on performance metrics.",
     link: "https://github.com/VishalS99/COMS6998-Project",
   },
   {
     id: 2,
     title: "Real-time detection of vehicular accidents using CCTV footage ",
-    desc: " Modeling and comparing two approaches that leverage the power of computer vision and supervised deep learning to detect accidents in real-time. A setup capitalizing on various <span class='proj-highlight'>spatio-temporal features</span> extracted from the CCTV surveillance footage, providing a robust method by achieving low false alarm rate while ensuring a high detection rate.",
+    desc: " Modeling and comparing two approaches through computer vision and supervised deep learning to detect accidents in real-time. A setup capitalizing on various <span class='proj-highlight'>spatio-temporal features</span> extracted from the CCTV surveillance footage, providing a robust method by achieving low false alarm rate while ensuring a high detection rate.",
     link: "",
   },
   {
@@ -89,7 +89,7 @@ export const projects = [
 
 export const resume_url = "https://bit.ly/3PckWRq";
 
-export const photo_body = `<em>A budding photographer aimlessly wandering the wonderlands to capture the moment! </em><br />
+export const photo_body = `<em>An aimless wanderlust, marking my presence in wonderlands! </em><br />
 Do check out my page
 <a
   style="display: inline-block; color: lightblue"

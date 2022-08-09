@@ -554,7 +554,7 @@ line {
 /* ## Photography ## */
 
 .photo-div {
-  top: 10%;
+  top: 20%;
   padding: 3%;
   position: relative;
   border-radius: 15px;
@@ -563,7 +563,7 @@ line {
 }
 
 .photo-title {
-  top: 12%;
+  top: 22%;
   left: 15%;
   width: 25%;
   z-index: 100;
