@@ -1,0 +1,10 @@
+{
+    "DBUSER": "",
+    "DBPW": "",
+    "DBHOST": "",
+    "DB": "",
+    "SECRET": "",
+    "SESSION_TYPE": "filesystem",
+    "SESSION_PERMANENT": "True",
+    "SESSION_USE_SIGNER": "True"
+  }
