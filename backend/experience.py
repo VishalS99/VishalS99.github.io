@@ -9,8 +9,8 @@ from model import Experience
 
 experience_api = Blueprint('experience_api', __name__)
 conn = get_connection()
-GATEWAY_URL = ""
-db = ""
+URL = "http://localhost:5011"
+table = "Experience"
 
 
 @experience_api.route("/health", methods = ["GET"])
@@ -27,7 +27,7 @@ def test():
 @experience_api.route("/get/all", methods = ["GET"])
 def get_all_experiences():
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM {}".format(db))
+    cursor.execute("SELECT * FROM {}".format(table))
     query_result = cursor.fetchall()
 
     if query_result is None:
@@ -42,7 +42,7 @@ def get_all_experiences():
 @experience_api.route("/get/<id>", methods = ["GET"])
 def get_experience_by_id(id):
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM {} where id={}".format(db, id))
+    cursor.execute("SELECT * FROM {} where id='{}'".format(table, id))
     query_result = cursor.fetchone()
 
     if query_result is None:
@@ -62,10 +62,10 @@ def add_experience(id):
 def update_experience(id):
     pass
 
-@experience_api.route("/remove/all", methods = ["DELETE"])
+@experience_api.route("/delete/all", methods = ["DELETE"])
 def remove_all_experiences():
     cursor = conn.cursor()
-    cursor.execute("DELETE FROM {}".format(db))
+    cursor.execute("DELETE FROM {}".format(table))
     query_result = cursor.fetchall()
 
     if len(query_result) == 0:
@@ -73,16 +73,16 @@ def remove_all_experiences():
     
     return None
 
-@experience_api.route("/remove/<id>", methods = ["DELETE"])
+@experience_api.route("/delete/<id>", methods = ["DELETE"])
 def remove_experience_by_id(id):
     cursor = conn.cursor()
-    msg = requests.get("/backend/bio/get/{}".format(id))
+    msg = requests.get(URL + "/backend/exp/get/{}".format(id))
     if msg.status_code == 404: 
         return msg.text, 404
-    cursor.execute("DELETE FROM {} where id={}".format(db, id))
+    cursor.execute("DELETE FROM {} where id='{}'".format(table, id))
     query_result = cursor.fetchone()
 
-    if len(query_result) == 0:
+    if query_result is None:
         return id, 200
     
     return None

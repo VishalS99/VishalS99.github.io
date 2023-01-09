@@ -1,15 +1,15 @@
 import json
-import os
-from flask import redirect, request, Blueprint, Response
+from flask import Blueprint, Response, request
 import requests
 from datetime import datetime
 from utils import get_connection
 from model import Bio
-
+import uuid
 
 bio_api = Blueprint('bio_api', __name__)
 conn = get_connection()
-db = ""
+table = "Bio"
+URL = "http://localhost:5011/"
 
 
 @bio_api.route("/health", methods = ["GET"])
@@ -23,32 +23,59 @@ def test():
     result = Response(json.dumps(msg), status=200, content_type="application/json")
     return result
 
-@bio_api.route("/get/all", methods = ["GET"])
+@bio_api.route("/get", methods = ["GET"])
 def get_bio():
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM {}".format(db))
+    cursor.execute("SELECT * FROM {}".format(table))
     query_result = cursor.fetchall()
 
-    if query_result is None:
+    if len(query_result) == 0:
         return "No bio exists", 404
     
     return {"data": Bio(*query_result[0].values()).__dict__}
 
 
-# TODO: ADD and UPDATE
 @bio_api.route("/add", methods = ["POST"])
 def add_bio():
-    pass
+    data = request.json
+    msg = requests.get(URL + "/backend/bio/get")
+    if msg.status_code == 200:
+        return "Bio already exists", 400
+    try:    
+        id = str(uuid.uuid4())
+        query = "INSERT INTO {} VALUES ('{}', '{}')".format(table, id, data['data'])
+        cursor = conn.cursor()
+        cursor.execute(query)
+        conn.commit()
+    except:
+        conn.rollback()
+        return "Failed to update bio", 500
+    return "Added bio", 200
 
 
 @bio_api.route("/update", methods = ["PUT"])
-def update_bio(id):
-    pass
+def update_bio():
+    data = request.json
+    msg = requests.get(URL + "/backend/bio/get")
+    if msg.status_code == 400:
+        return "Bio does not exist", 400
+    id = msg.json()['data']['id']
+    try:
+        query = "UPDATE {} SET bio = '{}' where id = '{}'".format(table, data['data'], id)
+        cursor = conn.cursor()
+        cursor.execute(query)
+        conn.commit()
+    except:
+        conn.rollback()
+        return "Failed to update bio", 500
 
-@bio_api.route("/remove", methods = ["DELETE"])
+    return "Updated bio", 200
+
+
+@bio_api.route("/delete", methods = ["DELETE"])
 def remove_bio():
     cursor = conn.cursor()
-    cursor.execute("DELETE FROM {}".format(db))
+    cursor.execute("DELETE FROM {}".format(table))
     query_result = cursor.fetchall()
 
     if len(query_result) == 0:

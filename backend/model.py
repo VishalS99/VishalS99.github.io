@@ -26,8 +26,9 @@ class Projects:
         self.link = link
 
 class Photo:
-    def __init__(self, id, photo_url) -> None:
+    def __init__(self, id, photo_name, photo_url) -> None:
         self.id = id
+        self.photo_name = photo_name
         self.photo_url = photo_url
 
     
