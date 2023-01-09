@@ -76,7 +76,7 @@ def remove_all_experiences():
 @experience_api.route("/delete/<id>", methods = ["DELETE"])
 def remove_experience_by_id(id):
     cursor = conn.cursor()
-    msg = requests.get(URL + "/backend/exp/get/{}".format(id))
+    msg = requests.get(URL + "/sauron/backend/exp/get/{}".format(id))
     if msg.status_code == 404: 
         return msg.text, 404
     cursor.execute("DELETE FROM {} where id='{}'".format(table, id))

@@ -95,7 +95,7 @@ def add_photo():
 @photo_api.route("/delete/all", methods = ["DELETE"])
 def remove_all_photos():
     cursor = conn.cursor()
-    msg = requests.get(URL + "/backend/photo/get/all")
+    msg = requests.get(URL + "/sauron/backend/photo/get/all")
 
     for photo in msg.json():
         image_url = photo['data']['photo_url']
@@ -116,7 +116,7 @@ def remove_all_photos():
 @photo_api.route("/delete/<id>", methods = ["DELETE"])
 def remove_photo_by_id(id):
     cursor = conn.cursor()
-    msg = requests.get(URL + "/backend/photo/get/{}".format(id))
+    msg = requests.get(URL + "/sauron/backend/photo/get/{}".format(id))
     if msg.status_code == 404: 
         return msg.text, 404
 

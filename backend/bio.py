@@ -38,7 +38,7 @@ def get_bio():
 @bio_api.route("/add", methods = ["POST"])
 def add_bio():
     data = request.json
-    msg = requests.get(URL + "/backend/bio/get")
+    msg = requests.get(URL + "/sauron/backend/bio/get")
     if msg.status_code == 200:
         return "Bio already exists", 400
     try:    
@@ -56,7 +56,7 @@ def add_bio():
 @bio_api.route("/update", methods = ["PUT"])
 def update_bio():
     data = request.json
-    msg = requests.get(URL + "/backend/bio/get")
+    msg = requests.get(URL + "/sauron/backend/bio/get")
     if msg.status_code == 400:
         return "Bio does not exist", 400
     id = msg.json()['data']['id']

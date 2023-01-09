@@ -15,7 +15,7 @@ class Experience:
 class Bio:
     def __init__(self, id, bio) -> None:
         self.id = id
-        self.role = bio
+        self.bio = bio
 
 
 class Projects:
