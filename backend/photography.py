@@ -1,5 +1,5 @@
 import json
-from flask import Blueprint, Response, request
+from flask import Blueprint, Response, request, jsonify
 import requests
 from datetime import datetime
 from utils import get_connection, upload_file_to_s3, allowed_file, s3
@@ -80,7 +80,12 @@ def add_photo():
                 query = "INSERT INTO {} VALUES('{}', '{}', '{}')".format(table, id, output.split('.')[0], output)
                 cursor.execute(query)
                 conn.commit()
-                return "Successful upload-" + id, 200
+                # return "Successful upload: " + id, 200
+                return jsonify({
+                    "id": id,
+                    "image_name": output.split('.')[0],
+                    "image_url": output
+                })
             except:
                 conn.rollback()
                 s3.delete_object(Bucket=os.getenv("AWS_BUCKET_NAME"), Key = "photography/" + output)
