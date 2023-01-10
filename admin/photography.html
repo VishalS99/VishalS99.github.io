@@ -38,11 +38,16 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <style>
+      #photo_con {
+        margin-top: 5vh;
+      }
+    </style>
   </head>
   <body>
-    <div class="container text-center">
+    <div class="container text-center" id="photo_con">
       <h1>
-        Photograhy
+        Photography
         <span style="font-size: x-small"
           ><a href="./index.html" style="text-decoration: none"
             >&#x1F3E0;</a
@@ -52,19 +57,16 @@
       <div class="container">
         <form>
           <div class="form-group">
-            <!-- <label for="photoName" class="form-label">File Name</label>
-            <input
-              type="text"
-              class="form-control"
-              id="photoName"
-              placeholder="(xyz).png"
-            /> -->
             <input
               type="file"
               id="photo_file"
               name="photo_file"
               accept="image/png, image/jpeg"
+              class="form-control"
+
             />
+            <small id="emailHelp" class="form-text text-muted">Ensure file size < 10MB</small>
+            <div id="size"></div>
           </div>
         </form>
         <br />
@@ -167,12 +169,29 @@
             message: err,
           });
         });
-
+        $("#photo_file").change(() => {
+          let file = $("#photo_file");
+          const sufixes = ['B', 'kB', 'MB', 'GB', 'TB'];
+          if (file.prop("files")[0]) {
+            let bytes = file.prop("files")[0].size
+            const i = Math.floor(Math.log(bytes) / Math.log(1024));
+            let mbsize = (bytes / Math.pow(1024, i)).toFixed(2)
+            if (mbsize <= 0 || mbsize > 10) {
+              $("#photo-add").prop("disabled", true)
+              $('#size').text(`${mbsize} ${sufixes[i]} (Photo size not acceptable)`)
+              $('#size').css('color', 'red')
+            } else {
+              $("#photo-add").prop("disabled", false)
+              $('#size').text(`${mbsize} ${sufixes[i]}`)
+              $('#size').css('color', 'black')
+            }
+          } else {
+            $('#size').text("")
+          }
+        })
       $("#photo-add").click(() => {
-        // let file_name = $("#photoName")
         let file = $("#photo_file");
         if (file.prop("files")[0]) {
-          console.log(file.prop("files")[0]);
           let formData = new FormData();
           formData.append("photo_file", file.prop("files")[0]);
           console.log(formData);

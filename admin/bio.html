@@ -39,18 +39,21 @@
       crossorigin="anonymous"
     />
     <style>
-      .bio-con {
+      #bio-con {
         margin-top: 25vh;
       }
     </style>
   </head>
   <body>
-    <div class="container text-center bio-con">
-      <h1>BIO <span style="font-size: x-small"
-        ><a href="./index.html" style="text-decoration: none"
-          >&#x1F3E0;</a
-        ></span
-      ></h1>
+    <div class="container text-center" id="bio-con">
+      <h1>
+        BIO
+        <span style="font-size: x-small"
+          ><a href="./index.html" style="text-decoration: none"
+            >&#x1F3E0;</a
+          ></span
+        >
+      </h1>
       <br />
       <form>
         <div class="form-group">
@@ -83,17 +86,18 @@
           bt.val(bio_data);
         })
         .catch((err) => {
-            jSuites.notification({
-                error: 1,
-                name: "Error message",
-                message: err,
-              });
+          jSuites.notification({
+            error: 1,
+            name: "Error message",
+            message: err,
+          });
         });
 
       $("#bio-btn").click(() => {
         d = bt.val();
 
-        if (d == "") { // DELETE
+        if (d == "") {
+          // DELETE
           fetch("https://54.89.213.139/sauron/backend/bio/delete", {
             method: "DELETE",
             headers: {
@@ -114,7 +118,8 @@
                 message: err,
               });
             });
-        } else if (bio_data == "") { // ADD
+        } else if (bio_data == "") {
+          // ADD
           fetch("https://54.89.213.139/sauron/backend/bio/add", {
             method: "POST",
             headers: {
@@ -130,7 +135,8 @@
               });
             })
             .catch((err) => console.log("weee", err));
-        } else { // UPDATE
+        } else {
+          // UPDATE
           fetch("https://54.89.213.139/sauron/backend/bio/update", {
             method: "PUT",
             headers: {
