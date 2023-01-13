@@ -49,7 +49,7 @@ def add_bio():
         conn.commit()
     except:
         conn.rollback()
-        return "Failed to update bio", 500
+        return "Failed to add bio", 500
     return "Added bio", 200
 
 

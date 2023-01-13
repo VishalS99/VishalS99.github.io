@@ -33,10 +33,7 @@ class Photo:
 
     
 class Links:
-    def __init__(self, id, insta, twitter, github, linkedin, email) -> None:
+    def __init__(self, id, name, link) -> None:
         self.id = id
-        self.insta_url = insta
-        self.twitter_url = twitter
-        self.github_url = github
-        self.linkedin_url = linkedin
-        self.email_url = email
+        self.name = name
+        self.link = link

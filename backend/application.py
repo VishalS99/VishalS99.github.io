@@ -21,11 +21,13 @@ from experience import experience_api
 from bio import bio_api
 from projects import projects_api
 from photography import photo_api
+from links import link_api
 
 sauron.register_blueprint(experience_api, url_prefix='/sauron/backend/exp')
 sauron.register_blueprint(bio_api, url_prefix='/sauron/backend/bio')
 sauron.register_blueprint(projects_api, url_prefix='/sauron/backend/proj')
 sauron.register_blueprint(photo_api, url_prefix='/sauron/backend/photo')
+sauron.register_blueprint(link_api, url_prefix='/sauron/backend/links')
 
 
 @sauron.route("/sauron/health", methods = ["GET"])
