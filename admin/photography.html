@@ -63,9 +63,10 @@
               name="photo_file"
               accept="image/png, image/jpeg"
               class="form-control"
-
             />
-            <small id="emailHelp" class="form-text text-muted">Ensure file size < 10MB</small>
+            <small id="emailHelp" class="form-text text-muted"
+              >Ensure file size < 10MB</small
+            >
             <div id="size"></div>
           </div>
         </form>
@@ -103,6 +104,7 @@
         grid.append(temp);
       });
     }
+
     function remove_photo(id) {
       fetch("https://54.89.213.139/sauron/backend/photo/delete/" + id, {
         method: "DELETE",
@@ -169,26 +171,28 @@
             message: err,
           });
         });
-        $("#photo_file").change(() => {
-          let file = $("#photo_file");
-          const sufixes = ['B', 'kB', 'MB', 'GB', 'TB'];
-          if (file.prop("files")[0]) {
-            let bytes = file.prop("files")[0].size
-            const i = Math.floor(Math.log(bytes) / Math.log(1024));
-            let mbsize = (bytes / Math.pow(1024, i)).toFixed(2)
-            if (mbsize <= 0 || mbsize > 10) {
-              $("#photo-add").prop("disabled", true)
-              $('#size').text(`${mbsize} ${sufixes[i]} (Photo size not acceptable)`)
-              $('#size').css('color', 'red')
-            } else {
-              $("#photo-add").prop("disabled", false)
-              $('#size').text(`${mbsize} ${sufixes[i]}`)
-              $('#size').css('color', 'black')
-            }
+      $("#photo_file").change(() => {
+        let file = $("#photo_file");
+        const sufixes = ["B", "kB", "MB", "GB", "TB"];
+        if (file.prop("files")[0]) {
+          let bytes = file.prop("files")[0].size;
+          const i = Math.floor(Math.log(bytes) / Math.log(1024));
+          let mbsize = (bytes / Math.pow(1024, i)).toFixed(2);
+          if (mbsize <= 0 || mbsize > 10) {
+            $("#photo-add").prop("disabled", true);
+            $("#size").text(
+              `${mbsize} ${sufixes[i]} (Photo size not acceptable)`
+            );
+            $("#size").css("color", "red");
           } else {
-            $('#size').text("")
+            $("#photo-add").prop("disabled", false);
+            $("#size").text(`${mbsize} ${sufixes[i]}`);
+            $("#size").css("color", "black");
           }
-        })
+        } else {
+          $("#size").text("");
+        }
+      });
       $("#photo-add").click(() => {
         let file = $("#photo_file");
         if (file.prop("files")[0]) {
@@ -203,11 +207,12 @@
             .then((result) => {
               console.log("Success:", result);
               destroy_photo_grid();
-			  result["image_url"] = AWS_DOMAIN + "photography/" + result["image_url"]
-			  photo_data.push(result)
+              result["image_url"] =
+                AWS_DOMAIN + "photography/" + result["image_url"];
+              photo_data.push(result);
               create_image_grid(photo_data);
 
-			  file.val(null)
+              file.val(null);
               jSuites.notification({
                 name: "Photo (ADDED)",
                 message: "Successfully added photo ",

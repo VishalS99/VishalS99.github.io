@@ -87,7 +87,7 @@ export const projects = [
   },
 ];
 
-export const resume_url = "https://bit.ly/3PckWRq";
+export const resume_url = "https://sauron-data.s3.amazonaws.com/SDE-Vishal-Saranathan.pdf";
 
 export const photo_body = `<em>An aimless wanderlust, marking my presence in wonderlands! </em><br />
 Do check out my page
