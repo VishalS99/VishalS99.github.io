@@ -1,19 +1,20 @@
+""" Main server file """
 import json
+from datetime import datetime
+from flask_cors import CORS
 from flask import Flask, session, Response
 from flask_session import Session
-from flask_cors import CORS
-from datetime import datetime
 from utils import get_connection, config_app
 
-sauron = Flask(__name__)
-CORS(sauron)
-path = "config.json"
 
-sauron = config_app(sauron, path=path)
+sauron = Flask(__name__)
+PATH = "config.json"
+sauron = config_app(sauron, path=PATH)
+CORS(sauron)
 conn = get_connection()
 Session(sauron)
 
-
+#pylint: disable=wrong-import-position
 from experience import experience_api
 from bio import bio_api
 from projects import projects_api
@@ -29,11 +30,12 @@ sauron.register_blueprint(link_api, url_prefix='/sauron/backend/links')
 
 @sauron.route("/sauron/health", methods = ["GET"])
 def health():
-    t = str(datetime.now())
+    """ Server health """
+    _t = str(datetime.now())
     msg = {
         "name": "Sauron-Service",
         "health": "Excellent",
-        "at time": t
+        "at time": _t
     }
     session.clear()
     result = Response(json.dumps(msg), status=200, content_type="application/json")
@@ -42,12 +44,15 @@ def health():
 
 @sauron.route("/sauron/login", methods = ["POST"])
 def login():
+    """ Manage Login """
     pass
 
 sauron.route("/sauron/logout", methods = ["GET"])
 def logout():
+    """ Manage Logout """
     pass
 
 
 if __name__ == "__main__":
     sauron.run('0.0.0.0', port = 5011, debug=True)
+    

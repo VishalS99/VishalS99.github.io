@@ -18,11 +18,11 @@ def test():
     """
     Test
     """
-    t = str(datetime.now())
+    _t = str(datetime.now())
     msg = {
         "name": "Sauron-Link-Service",
         "health": "Excellent",
-        "at time": t
+        "at time": _t
     }
     result = Response(json.dumps(msg), status=200,
                       content_type="application/json")
