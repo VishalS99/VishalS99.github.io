@@ -1,10 +1,7 @@
 import json
-import os
-from flask import redirect, Flask, session, g, request, jsonify, Response, url_for
+from flask import Flask, session, Response
 from flask_session import Session
-from datetime import timedelta
 from flask_cors import CORS
-import requests
 from datetime import datetime
 from utils import get_connection, config_app
 

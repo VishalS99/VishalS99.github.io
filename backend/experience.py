@@ -1,6 +1,5 @@
 import json
-import os
-from flask import redirect, request, Blueprint, Response
+from flask import Blueprint, Response
 import requests
 from datetime import datetime
 from utils import get_connection
