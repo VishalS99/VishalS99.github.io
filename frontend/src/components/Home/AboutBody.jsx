@@ -6,7 +6,7 @@ import { AiOutlineTwitter } from "solid-icons/ai";
 import { createRenderEffect, createSignal } from "solid-js";
 
 // const fetchBio = async () => (await fetch('http://localhost:5011/sauron/backend/bio/get')).json();
-const url = "http://52.91.194.48:5011/sauron/backend"
+const url = "https://sauron.onrender.com/sauron/backend"
 
 export default function AboutBody() {
   // const [bioData, {mutate, refetch}] = createResource(fetchBio);

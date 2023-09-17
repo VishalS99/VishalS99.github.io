@@ -1,6 +1,5 @@
 function scrollFn(e) {
   let type = $(e.target).data("link");
-  console.log("dsd");
   document.querySelector("#" + type).scrollIntoView({ behavior: "smooth" });
 }
 

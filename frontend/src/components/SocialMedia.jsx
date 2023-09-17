@@ -5,7 +5,7 @@ import { FiInstagram } from "solid-icons/fi";
 import { FiTwitter } from "solid-icons/fi";
 import { createRenderEffect, createSignal } from "solid-js";
 
-const url = "http://52.91.194.48:5011/sauron/backend"
+const url = "https://sauron.onrender.com/sauron/backend"
 export default function SocialMedia() {
   const [links, setLinks] = createSignal();
   createRenderEffect(() => {
