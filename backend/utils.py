@@ -17,10 +17,10 @@ ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 def config_app(app, path):
     """ Populates environment variables """
     try:
-        with open(path, encoding='utf-8') as config_file:
-            data = json.load(config_file)
-            for keys in data.keys():
-                os.environ[keys] = data[keys]
+        # with open(path, encoding='utf-8') as config_file:
+        #     data = json.load(config_file)
+        #     for keys in data.keys():
+        #         os.environ[keys] = data[keys]
         app.secret_key = os.environ.get("SECRET") or os.urandom(24)
         app.config["SESSION_TYPE"] = os.environ.get("SESSION_TYPE", None)
         app.config["SESSION_PERMANENT"] = True if os.environ.get(

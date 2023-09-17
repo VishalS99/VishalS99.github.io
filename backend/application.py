@@ -8,7 +8,7 @@ from utils import get_connection, config_app
 
 
 sauron = Flask(__name__)
-PATH = "config.json"
+PATH = "config.example.json"
 sauron = config_app(sauron, path=PATH)
 CORS(sauron)
 conn = get_connection()
