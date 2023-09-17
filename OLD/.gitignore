@@ -1,7 +1,0 @@
-env
-*/env
-*/config.json
-*/__pycache__
-__pycache__
-*/flask_session
-*/*.sql
