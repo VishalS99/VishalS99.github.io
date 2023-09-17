@@ -1,6 +1,6 @@
 function scrollFn(e) {
   let type = $(e.target).data("link");
-  console.log("dsd")
+  console.log("dsd");
   document.querySelector("#" + type).scrollIntoView({ behavior: "smooth" });
 }
 
@@ -55,7 +55,12 @@ export default function Navbar() {
               </a>
             </li>
             <li class="text-primary">
-              <a>Resume</a>
+              <a
+                href="https://sauron-data.s3.amazonaws.com/SDE-Vishal-Saranathan.pdf"
+                target="_blank"
+              >
+                Resume
+              </a>
             </li>
           </ul>
         </div>
@@ -88,8 +93,14 @@ export default function Navbar() {
             </a>
           </li>
           <li>
-            <button class="btn btn-outline btn-border">Resume</button>
-            {/* <a>Resume</a> */}
+            <button class="btn btn-outline btn-border">
+              <a
+                href="https://sauron-data.s3.amazonaws.com/SDE-Vishal-Saranathan.pdf"
+                target="_blank"
+              >
+                Resume
+              </a>
+            </button>
           </li>
         </ul>
       </div>
