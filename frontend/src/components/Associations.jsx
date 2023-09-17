@@ -1,10 +1,11 @@
 import { createRenderEffect, createSignal } from "solid-js";
 
+const url = "http://52.91.194.48:5011/sauron/backend"
 export default function Associations() {
   const s3Associations = "https://sauron-data.s3.amazonaws.com/associations/";
   const [associations, setAssociations] = createSignal();
   createRenderEffect(() => {
-    fetch("http://localhost:5011/sauron/backend/association/get/all")
+    fetch(url + "/association/get/all")
       .then((response) => response.json())
       .then((data) => setAssociations(data));
   });

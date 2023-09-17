@@ -5,10 +5,11 @@ import { FiInstagram } from "solid-icons/fi";
 import { FiTwitter } from "solid-icons/fi";
 import { createRenderEffect, createSignal } from "solid-js";
 
+const url = "http://52.91.194.48:5011/sauron/backend"
 export default function SocialMedia() {
   const [links, setLinks] = createSignal();
   createRenderEffect(() => {
-    fetch("http://localhost:5011/sauron/backend/link/get/all")
+    fetch(url + "/link/get/all")
       .then((response) => response.json())
       .then((data) => {
         setLinks(data);
@@ -18,7 +19,7 @@ export default function SocialMedia() {
     <div class="flex flex-col h-[calc(100vh-7rem)] gap-8 place-items-center">
       <div class="h-full w-0.5 bg-secondary" />
           <div class="place-items-center row-span-1">
-            <a href={links()? links()[1].data.link: "#"} target="_blank">
+            <a href={links()? "mailto:" + links()[1].data.link: "#"} target="_blank">
               <HiOutlineMail
                 size={24}
                 class="stroke-primary hover:fill-accent"

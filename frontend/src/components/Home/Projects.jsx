@@ -1,9 +1,11 @@
 import { createRenderEffect, createSignal } from "solid-js";
 
+const url = "http://52.91.194.48:5011/sauron/backend";
+
 function ProjectsMobile() {
   const [projects, setProjects] = createSignal();
   createRenderEffect(() => {
-    fetch("http://localhost:5011/sauron/backend/project/get/all")
+    fetch(url + "/project/get/all")
       .then((response) => response.json())
       .then((data) => {
         setProjects(data);
@@ -88,7 +90,7 @@ function ProjectsMobile() {
 function Projects() {
   const [projects, setProjects] = createSignal();
   createRenderEffect(() => {
-    fetch("http://localhost:5011/sauron/backend/project/get/all")
+    fetch(url + "/project/get/all")
       .then((response) => response.json())
       .then((data) => {
         setProjects(data);

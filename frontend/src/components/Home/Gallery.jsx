@@ -1,10 +1,12 @@
 import { createRenderEffect, createSignal } from "solid-js";
 
+const url = "http://52.91.194.48:5011/sauron/backend";
+
 function GalleryMobile() {
   const s3Photography = "https://sauron-data.s3.amazonaws.com/photography/";
   const [photos, setPhotos] = createSignal();
   createRenderEffect(() => {
-    fetch("http://localhost:5011/sauron/backend/photo/get/all")
+    fetch(url + "/photo/get/all")
       .then((response) => response.json())
       .then((data) => [setPhotos(data)]);
   });
@@ -59,7 +61,7 @@ function Gallery() {
   const s3Photography = "https://sauron-data.s3.amazonaws.com/photography/";
   const [photos, setPhotos] = createSignal();
   createRenderEffect(() => {
-    fetch("http://localhost:5011/sauron/backend/photo/get/all")
+    fetch(url + "/photo/get/all")
       .then((response) => response.json())
       .then((data) => [setPhotos(data)]);
   });

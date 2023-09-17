@@ -5,6 +5,7 @@ import {
 } from "solid-js";
 
 
+const url = "http://52.91.194.48:5011/sauron/backend";
 
 function buildDuration(startDate , endDate) {
   startDate = new Date(startDate);
@@ -74,7 +75,7 @@ function ExperienceMobile() {
   const [experiences, setExperiences] = createSignal();
   const [currentExperience, setCurrentExperience] = createSignal();
   createRenderEffect(() => {
-    fetch("http://localhost:5011/sauron/backend/exp/get/all")
+    fetch(url + "/exp/get/all")
       .then((response) => response.json())
       .then((data) => {
         setExperiences(data);
@@ -142,7 +143,7 @@ function Experience() {
   const [experiences, setExperiences] = createSignal();
   const [currentExperience, setCurrentExperience] = createSignal();
   createRenderEffect(() => {
-    fetch("http://localhost:5011/sauron/backend/exp/get/all")
+    fetch(url + "/exp/get/all")
       .then((response) => response.json())
       .then((data) => {
         setExperiences(data);
