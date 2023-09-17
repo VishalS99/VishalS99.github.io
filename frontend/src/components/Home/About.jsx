@@ -10,7 +10,7 @@ function AboutMobile() {
           <img
             class="rounded-full "
             src="https://sauron-data.s3.amazonaws.com/DSC_6317.jpg"
-            alt=""
+            alt="Vishal Saranathan"
           />
         </figure>
       </div>
@@ -31,7 +31,7 @@ function About() {
               <img
                 class="rounded-3xl transition ease-in-out filter saturate-25 brightness-125 contrast-125 hover:filter-none duration-500"
                 src="https://sauron-data.s3.amazonaws.com/DSC_6317.jpg"
-                alt=""
+                alt="Vishal Saranathan"
               />
             </figure>
           </div>

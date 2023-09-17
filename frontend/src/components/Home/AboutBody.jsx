@@ -3,8 +3,19 @@ import { AiFillGithub } from "solid-icons/ai";
 import { AiFillLinkedin } from "solid-icons/ai";
 import { AiFillInstagram } from "solid-icons/ai";
 import { AiOutlineTwitter } from "solid-icons/ai";
+import { createRenderEffect, createSignal } from "solid-js";
+
+// const fetchBio = async () => (await fetch('http://localhost:5011/sauron/backend/bio/get')).json();
 
 export default function AboutBody() {
+  // const [bioData, {mutate, refetch}] = createResource(fetchBio);
+  const [bioData, setBioData] = createSignal("Loading...");
+  createRenderEffect(() => {
+    fetch('http://localhost:5011/sauron/backend/bio/get')
+    .then(response => response.json())
+    .then(data => setBioData(data.data.bio))
+  })
+
   return (
     <div class="md:w-11/12 flex flex-col m-auto">
       <div class="flex z-50">
@@ -22,11 +33,13 @@ export default function AboutBody() {
           </div>
         </div>
       </div>
-      <div class="md:text-xl md:text-left p-9 pb-12 bg-neutral border-2 text-md border-solid border-primary rounded-lg shadow-mainbox font-body text-center prose">
-        → A Masters student pursuing Computer Science at{" "}
-        <span class="text-primary">Columbia University</span>; <br />→ A
-        coffeeholic trying to decipher the world through code, quick captures
-        and magic ✨
+      <div class="md:text-xl md:text-left p-9 pb-12 bg-neutral border-2 text-md border-solid border-primary rounded-lg shadow-mainbox font-body text-center prose">   
+        {/* {
+        bioData.loading == false? (
+          <span  innerHTML={ bioData()['data']['bio']}></span>
+          ) : "Loading..."
+        } */}
+        <span  innerHTML={bioData()}></span>
         <span class="md:hidden flex flex-row mt-4">
           <AiFillMail size={24} class=" mx-auto" />
           <AiFillGithub size={24} class=" mx-auto" />

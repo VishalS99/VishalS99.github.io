@@ -9,9 +9,8 @@ function EducationUnit(props) {
   const [specialization, setSpecialization] = createSignal(
     props.initialSpecialization
   );
-  console.log(logo());
   return (
-    <div class="md:grid md:grid-cols-12 flex flex-col">
+    <div class="md:grid md:grid-cols-12 flex flex-col" id="education-mb">
       <div class="md:col-span-4 flex justify-center">
         <figure class="md:w-[60%] md:m-0 w-1/3 m-4">
           <img src={logo()} alt="" />
@@ -37,7 +36,7 @@ function EducationUnit(props) {
 
 function Education() {
   return (
-    <div class="h-full flex">
+    <div class="h-full flex" id="education">
       <div class="w-full h-3/4 flex flex-col m-auto">
         <div class="flex z-50">
           <div class="w-[18%] ml-[9rem] flex flex-col shadow-[0_0_15px_15px_#051420] rounded-md text-center bg-base-100">
@@ -48,7 +47,7 @@ function Education() {
           <div class="grid grid-cols-12 gap-4 h-full">
             <div class="col-span-6 ">
               <EducationUnit
-                initialLogo="/associations/cu.png"
+                initialLogo="/education/cu.png"
                 initialDegree="Master of Science"
                 initialUniversity="Columbia University"
                 initialLocation="NY"
@@ -58,7 +57,7 @@ function Education() {
             </div>
             <div class="col-span-6 ">
               <EducationUnit
-                initialLogo="/associations/nitt.png"
+                initialLogo="/education/nitt.png"
                 initialDegree="Bachelor of Technology"
                 initialUniversity="National Institute of Technology, Tiruchirappalli"
                 initialLocation="India"
@@ -85,7 +84,7 @@ function EducationMobile() {
           <div class="flex flex-col h-full">
             <div>
               <EducationUnit
-                initialLogo="/associations/cu.png"
+                initialLogo="/education/cu.png"
                 initialDegree="Master of Science"
                 initialUniversity="Columbia University"
                 initialLocation="NY"
@@ -96,7 +95,7 @@ function EducationMobile() {
             <div class="divider" />
             <div>
               <EducationUnit
-                initialLogo="/associations/nitt.png"
+                initialLogo="/education/nitt.png"
                 initialDegree="Bachelor of Technology"
                 initialUniversity="National Institute of Technology, Tiruchirappalli"
                 initialLocation="India"

@@ -20,7 +20,7 @@ function MainBodyMobile() {
 
 function MainBody() {
   return (
-    <div class="h-full">
+    <div class="h-full" id="main">
       <About />
       <Experience />
       <Education />
