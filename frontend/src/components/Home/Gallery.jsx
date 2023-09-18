@@ -27,7 +27,7 @@ function GalleryMobile() {
               <br />
               Do check out my page{" "}
               <a
-                href="https://github.com/VishalS99"
+                href="https://www.instagram.com/_vishal_here_/"
                 class="text-accent underline hover:text-secondary"
               >
                 _vishal_here_

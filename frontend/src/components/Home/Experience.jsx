@@ -124,7 +124,7 @@ function ExperienceMobile() {
                   company={currentExperience().company}
                   type={currentExperience().job_type}
                   location={currentExperience().location}
-                  duration={currentExperience().start_date + " (" + Math.floor(new Date(currentExperience().end_date) - new Date(currentExperience().start_date) / (1000 * 60 * 60 * 24 * 30))}
+                  duration= {buildDuration(currentExperience().start_date, currentExperience().end_date)} 
                   logo={currentExperience().logo}
                   desc={currentExperience().desc}
                   tech={currentExperience().tech}
