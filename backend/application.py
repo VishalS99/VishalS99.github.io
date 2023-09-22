@@ -57,6 +57,6 @@ def logout():
     pass
 
 
-if __name__ == "__main__":
-    sauron.run('0.0.0.0', port = 5011, debug=True)
+# if __name__ == "__main__":
+#     sauron.run('0.0.0.0', port = 5011, debug=True)
     
