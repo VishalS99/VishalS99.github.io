@@ -1,7 +1,7 @@
 {
   "name": "vishals99-portfolio",
   "version": "1.0.0",
-  "homepage": "http://vishals99.github.io/VishalS99.github.io",
+  "homepage": "https://vishals99.github.io",
   "description": "",
   "scripts": {
     "start": "vite",
