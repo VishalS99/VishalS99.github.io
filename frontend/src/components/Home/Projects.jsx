@@ -1,15 +1,11 @@
-import { createRenderEffect, createSignal } from "solid-js";
-
-const url = "https://sauron.onrender.com/sauron/backend";
+import { createRenderEffect, createSignal, For } from "solid-js";
 
 function ProjectsMobile() {
-  const [projects, setProjects] = createSignal();
+  const [projects, setProjects] = createSignal([]);
   createRenderEffect(() => {
-    fetch(url + "/project/get/all")
+    fetch("/data.json")
       .then((response) => response.json())
-      .then((data) => {
-        setProjects(data);
-      });
+      .then((data) => setProjects(data.projects));
   });
   const getSelectedProject = (event) => {
     $(".proj-btn").each(function(index) {
@@ -32,6 +28,8 @@ function ProjectsMobile() {
             Visit my{" "}
             <a
               href="https://github.com/VishalS99"
+              target="_blank"
+              rel="noopener noreferrer"
               class="text-accent underline hover:text-secondary"
             >
               Github
@@ -90,11 +88,9 @@ function ProjectsMobile() {
 function Projects() {
   const [projects, setProjects] = createSignal();
   createRenderEffect(() => {
-    fetch(url + "/project/get/all")
+    fetch("/data.json")
       .then((response) => response.json())
-      .then((data) => {
-        setProjects(data);
-      });
+      .then((data) => setProjects(data.projects));
   });
   return (
     <div class="min-h-full flex relative" id="project">
@@ -109,6 +105,8 @@ function Projects() {
             Visit my{" "}
             <a
               href="https://github.com/VishalS99"
+              target="_blank"
+              rel="noopener noreferrer"
               class="text-accent underline hover:text-secondary"
             >
               Github

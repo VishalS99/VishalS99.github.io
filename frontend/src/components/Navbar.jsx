@@ -1,9 +1,20 @@
+import { createSignal, onMount } from "solid-js";
+
 function scrollFn(e) {
   let type = $(e.target).data("link");
   document.querySelector("#" + type).scrollIntoView({ behavior: "smooth" });
 }
 
 export default function Navbar() {
+  const [resumeUrl, setResumeUrl] = createSignal("#");
+
+  onMount(() => {
+    fetch("/data.json")
+      .then((r) => r.json())
+      .then((d) => setResumeUrl(d.resume_url))
+      .catch(() => {});
+  });
+
   return (
     <div class="navbar md:shadow-nav-custom">
       <div class="navbar-start">
@@ -54,10 +65,7 @@ export default function Navbar() {
               </a>
             </li>
             <li class="text-primary">
-              <a
-                href="https://sauron-data.s3.amazonaws.com/SDE-Vishal-Saranathan.pdf"
-                target="_blank"
-              >
+              <a href={resumeUrl()} target="_blank">
                 Resume
               </a>
             </li>
@@ -93,10 +101,7 @@ export default function Navbar() {
           </li>
           <li>
             <button class="btn btn-outline btn-border">
-              <a
-                href="https://sauron-data.s3.amazonaws.com/SDE-Vishal-Saranathan.pdf"
-                target="_blank"
-              >
+              <a href={resumeUrl()} target="_blank">
                 Resume
               </a>
             </button>

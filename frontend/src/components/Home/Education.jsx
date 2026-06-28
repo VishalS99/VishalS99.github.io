@@ -1,7 +1,5 @@
 import { createSignal } from "solid-js";
 
-const url = "https://sauron.onrender.com/sauron/backend";
-
 function EducationUnit(props) {
   const [logo, setLogo] = createSignal(props.initialLogo);
   const [degree, setDegree] = createSignal(props.initialDegree);
@@ -9,7 +7,7 @@ function EducationUnit(props) {
   const [location, setLocation] = createSignal(props.initialLocation);
   const [major, setMajor] = createSignal(props.initialMajor);
   const [specialization, setSpecialization] = createSignal(
-    props.initialSpecialization
+    props.initialSpecialization,
   );
   return (
     <div class="md:grid md:grid-cols-12 flex flex-col" id="education-mb">
@@ -39,13 +37,13 @@ function EducationUnit(props) {
 function Education() {
   return (
     <div class="h-full flex" id="education">
-      <div class="w-full h-3/4 flex flex-col m-auto">
+      <div class="w-full h-1/2 flex flex-col m-auto">
         <div class="flex z-50">
           <div class="w-[18%] ml-[9rem] flex flex-col shadow-[0_0_15px_15px_#051420] rounded-md text-center bg-base-100">
             <span class="text-4xl text-accent">Education</span>
           </div>
         </div>
-        <div class="p-14 h-2/3 border-2 border-solid border-primary rounded-lg shadow-mainbox font-body bg-neutral">
+        <div class="p-14 max-h-[80vh] border-2 border-solid border-primary rounded-lg shadow-mainbox font-body bg-neutral">
           <div class="grid grid-cols-12 gap-4 h-full">
             <div class="col-span-6 ">
               <EducationUnit
@@ -82,7 +80,7 @@ function EducationMobile() {
             <span class="text-3xl text-accent">Education</span>
           </div>
         </div>
-        <div class="p-8 h-2/3 border-2 border-solid border-primary rounded-lg shadow-mainbox font-body bg-neutral">
+        <div class="p-8 max-h-[70vh] border-2 border-solid border-primary rounded-lg shadow-mainbox font-body bg-neutral">
           <div class="flex flex-col h-full">
             <div>
               <EducationUnit

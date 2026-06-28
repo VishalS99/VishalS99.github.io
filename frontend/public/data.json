@@ -1,0 +1,110 @@
+{
+  "bio": "I build platforms that move money efficiently. Right now I'm at BNY Mellon architecting payment infrastructure and building LLM agents that automate complex financial operations.",
+  "resume_url": "https://docs.google.com/document/d/153n9QVr0LDm-U0Z3wbdc4i3BXvdMY2PaBmSOIn09t6M/edit?usp=sharing",
+  "projects": [
+    {
+      "data": {
+        "title": "Roamie (AI Chat App)",
+        "desc": "High-concurrency real-time chat server in Go using WebSockets, Goroutines, and channels for thread-safe state synchronization across concurrent user sessions. Integrates LLMs via LangChainGo as an autonomous AI group participant with Supermemory for persistent multi-user context and itinerary synthesis. High-performance backend with the Gin framework and PostgreSQL for complex group-based state transitions.",
+        "link": "https://github.com/VishalS99/travelapp/"
+      }
+    },
+    {
+      "data": {
+        "title": "AutoAlignNN",
+        "desc": "U-Net based document auto-alignment module using Keras and OpenCV. Performs deskewing, segmentation and perspective correction of documents. Uses Canny edge detection to identify contours and applies perspective transforms. Trained on 256x256 images achieving 91% accuracy. Built during internship at Sutherland Global.",
+        "link": "https://github.com/VishalS99/AutoAlignNN"
+      }
+    },
+    {
+      "data": {
+        "title": "Document Requisition Portal",
+        "desc": "Automated university document workflows by replacing email-based systems to support remote pandemic operations. Built modular React components and utilized the Context API for state management and real-time dashboard tracking. Developed an asynchronous communication layer with Axios to integrate the UI with a RESTful backend, streamlining the lifecycle of academic credential requests and approval cycles.",
+        "link": "https://github.com/VishalS99"
+      }
+    },
+    {
+      "data": {
+        "title": "Performance Modeling of Unsupervised Domain Adaptation",
+        "desc": "Benchmarked CycleGAN training throughput across heterogeneous GPU architectures, correlating hardware specifications (CUDA cores, memory bandwidth) with computational efficiency and FLOPs utilization. Developed a predictive Identity Autoencoder to estimate network convergence and loss metrics, enabling rapid architectural evaluation while reducing total compute overhead by eliminating full training cycles.",
+        "link": "https://github.com/VishalS99/COMS6998-Project"
+      }
+    }
+  ],
+  "experiences": [
+    {
+      "data": {
+        "role": "Full Stack Engineer II",
+        "company": "Bank of New York Mellon",
+        "job_type": "Full-time",
+        "location": "Orlando, FL",
+        "start_date": "2023-04-17",
+        "end_date": null,
+        "logo": "/bny.png",
+        "desc": "Built 8 Spring Boot service components for the core payment engine, accelerating legacy client migration and processing $100 million+ in daily transactions\n*Boosted backend code coverage by 33% across core payment microservices by developing comprehensive JUnit test suites\n*Engineered a full-stack payment and file monitoring portal (Java/Spring, Angular/AG Grid) featuring transaction replay capabilities, achieving ~90% reduction in latency and accelerating manual verification from 24 hours to 5 minutes\n*Placed Top 8 out of 50 globally in the BNY AI Hackathon by engineering an end-to-end Python transcription engine, leveraging NLTK preprocessing and CUDA-accelerated local Whisper models\n*Developing real-time JavaScript LLM agents to replace manual developer interventions across core enterprise payment pipelines",
+        "tech": "Spring Boot;JUnit;Angular;AG Grid;JavaScript;LLM agents;Go"
+      }
+    },
+    {
+      "data": {
+        "role": "Graduate Research Assistant",
+        "company": "Columbia University",
+        "job_type": "Research",
+        "location": "New York, NY",
+        "start_date": "2022-06-21",
+        "end_date": "2022-09-20",
+        "logo": "/education/cu.png",
+        "desc": "Evaluated multi-modal deep learning models at the DVMM Lab, analyzing the Visual Commonsense Reasoning (VCR) video dataset to identify architectural bottlenecks and temporal reasoning limitations\n*Established benchmarking protocols to quantify baseline performance and model sensitivity for temporal video analysis",
+        "tech": "Multi-modal deep learning;VCR dataset;Temporal reasoning"
+      }
+    },
+    {
+      "data": {
+        "role": "Software Development Engineer Intern",
+        "company": "Oracle",
+        "job_type": "Internship",
+        "location": "India",
+        "start_date": "2020-05-11",
+        "end_date": "2020-06-22",
+        "logo": "/oracle.png",
+        "desc": "Automated OUD orchestration on Kubernetes using custom Helm chart functions to support high-availability directory replication\n*Developed and unit-tested infrastructure logic for Identity Management services to ensure consistency across distributed directory servers",
+        "tech": "OUD;Kubernetes;Helm charts"
+      }
+    },
+    {
+      "data": {
+        "role": "Machine Learning Engineer Intern",
+        "company": "Sutherland Global",
+        "job_type": "Internship",
+        "location": "India",
+        "start_date": "2019-05-15",
+        "end_date": "2019-07-22",
+        "logo": "/sutherland.png",
+        "desc": "Architected a custom U-Net model in Keras/Tensorflow, increasing document extraction accuracy by 40%\n*Engineered an OpenCV pipeline using Canny edge detection and perspective transforms for automated document deskewing\n*Deployed an inference engine via Flask REST API, orchestrating image preprocessing and real-time model execution",
+        "tech": "U-Net;Keras;Tensorflow;OpenCV;Canny edge;Flask"
+      }
+    }
+  ],
+  "photos": [
+    {
+      "data": {
+        "instagram_url": "https://www.instagram.com/p/BvrQ43MlmG0/"
+      }
+    },
+    {
+      "data": {
+        "instagram_url": "https://www.instagram.com/p/Cwv7aAGMqEe/"
+      }
+    },
+    {
+      "data": {
+        "instagram_url": "https://www.instagram.com/p/DOYw7qUjaei/"
+      }
+    },
+    {
+      "data": {
+        "instagram_url": "https://www.instagram.com/p/DOQ-fW9DZRA/"
+      }
+    }
+  ]
+}

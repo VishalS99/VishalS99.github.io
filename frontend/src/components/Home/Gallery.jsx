@@ -1,15 +1,39 @@
-import { createRenderEffect, createSignal } from "solid-js";
-
-const url = "https://sauron.onrender.com/sauron/backend";
+import { createRenderEffect, createSignal, For } from "solid-js";
 
 function GalleryMobile() {
-  const s3Photography = "https://sauron-data.s3.amazonaws.com/photography/";
-  const [photos, setPhotos] = createSignal();
+  const [photos, setPhotos] = createSignal([]);
+  const [activeIndex, setActiveIndex] = createSignal(0);
+  const [loading, setLoading] = createSignal(true);
+  let carouselRef;
+
+  const onCarouselScroll = () => {
+    if (!carouselRef) return;
+    const container = carouselRef;
+    const items = container.querySelectorAll(".carousel-item");
+    let closest = 0;
+    let minDist = Infinity;
+    items.forEach((item, i) => {
+      const dist = Math.abs(item.offsetLeft - container.scrollLeft);
+      if (dist < minDist) {
+        minDist = dist;
+        closest = i;
+      }
+    });
+    setActiveIndex(closest);
+  };
+
   createRenderEffect(() => {
-    fetch(url + "/photo/get/all")
+    fetch("/data.json")
       .then((response) => response.json())
-      .then((data) => [setPhotos(data)]);
+      .then((data) => {
+        setPhotos(data.photos || []);
+        setTimeout(() => {
+          if (window.instgrm) window.instgrm.Embeds.process();
+          setTimeout(() => setLoading(false), 2000);
+        }, 100);
+      });
   });
+
   return (
     <div class="h-full flex" id="photography-mb">
       <div class="w-11/12 h-3/4 flex flex-col m-auto">
@@ -18,35 +42,69 @@ function GalleryMobile() {
             <span class="text-3xl text-accent">Gallery</span>
           </div>
         </div>
-        <div class="p-4 h-2/3 border-2 border-solid border-primary rounded-lg shadow-mainbox font-body bg-neutral">
+        <div class="p-2 border-2 border-solid border-primary rounded-lg shadow-mainbox font-body bg-neutral">
           <div class="flex flex-col h-full">
             <p class="text-center mb-8 text-primary">
-              <span class="italic">
-                An aimless wanderlust, marking my presence in wonderlands!
-              </span>
-              <br />
-              Do check out my page{" "}
+              Photos from my travels! Follow me on{" "}
               <a
                 href="https://www.instagram.com/_vishal_here_/"
                 class="text-accent underline hover:text-secondary"
               >
-                _vishal_here_
+                Instagram
               </a>{" "}
-              for more of my photomania.
+              for more.
             </p>
-            <div class="w-full carousel rounded-box">
+
+            <div
+              ref={carouselRef}
+              onScroll={onCarouselScroll}
+              class="w-full carousel rounded-box gap-4"
+            >
               <For each={photos()}>
                 {(photo, i) => (
-                  <div class="carousel-item w-full">
-                    
-                    <a href={s3Photography + photo.data.photo_url} target="_blank">
-                    <img
-                      src={s3Photography + photo.data.photo_url}
-                      alt={photo.data.photo_name}
-                      class="w-full"
-                    />
-                      </a>
+                  <div
+                    id={"gallery-mb-" + i()}
+                    class="carousel-item w-full flex justify-center items-center"
+                  >
+                    <div class="w-full max-w-[450px] relative bg-white rounded-lg border border-gray-200">
+                      {loading() && (
+                        <div class="absolute inset-0 flex items-center justify-center z-10">
+                          <div class="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin" />
+                        </div>
+                      )}
+                      <blockquote
+                        class="instagram-media"
+                        data-instgrm-permalink={photo.data.instagram_url}
+                        data-instgrm-version="14"
+                        data-instgrm-theme="dark"
+                        style={{
+                          background: "#FFF",
+                          border: "0",
+                          margin: "0",
+                          padding: "0",
+                          width: "100%",
+                          minWidth: "0",
+                        }}
+                      />
+                    </div>
                   </div>
+                )}
+              </For>
+            </div>
+            <div class="flex justify-center w-full py-2 gap-2">
+              <For each={photos()}>
+                {(photo, i) => (
+                  <a
+                    href={"#gallery-mb-" + i()}
+                    class={
+                      i() == activeIndex()
+                        ? "btn btn-accent btn-xs"
+                        : "btn btn-primary btn-xs"
+                    }
+                    onClick={() => setActiveIndex(i())}
+                  >
+                    {i() + 1}
+                  </a>
                 )}
               </For>
             </div>
@@ -58,49 +116,64 @@ function GalleryMobile() {
 }
 
 function Gallery() {
-  const s3Photography = "https://sauron-data.s3.amazonaws.com/photography/";
-  const [photos, setPhotos] = createSignal();
+  const [photos, setPhotos] = createSignal([]);
+  const [loading, setLoading] = createSignal(true);
+
   createRenderEffect(() => {
-    fetch(url + "/photo/get/all")
+    fetch("/data.json")
       .then((response) => response.json())
-      .then((data) => [setPhotos(data)]);
+      .then((data) => {
+        setPhotos(data.photos || []);
+        setTimeout(() => {
+          if (window.instgrm) window.instgrm.Embeds.process();
+          setTimeout(() => setLoading(false), 2000);
+        }, 100);
+      });
   });
+
   return (
-    <div class="min-h-full flex" id="photography">
-      <div class="w-full flex flex-col m-auto">
+    <div class="h-full flex" id="photography">
+      <div class="w-full h-min flex flex-col m-auto">
         <div class="flex z-50">
           <div class="w-[18%] ml-[9rem] flex flex-col shadow-[0_0_15px_15px_#051420] rounded-md text-center bg-base-100">
             <span class="text-4xl text-accent">Gallery</span>
           </div>
         </div>
-        <div class="p-8 h-2/3 border-2 border-solid border-primary rounded-lg shadow-mainbox font-body bg-neutral">
+        <div class="p-8 border-2 border-solid border-primary rounded-lg shadow-mainbox font-body bg-neutral">
           <p class="text-center mb-8 text-primary">
-            <span class="italic">
-              An aimless wanderlust, marking my presence in wonderlands!
-            </span>
-            <br />
-            Do check out my page{" "}
+            Photos from my travels! Follow me on{" "}
             <a
-              href="https://github.com/VishalS99"
+              href="https://www.instagram.com/_vishal_here_/"
               class="text-accent underline hover:text-secondary"
             >
-              _vishal_here_
+              Instagram
             </a>{" "}
-            for more of my photomania.
+            for more.
           </p>
-          <div class="grid grid-cols-12">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 justify-items-center">
             <For each={photos()}>
-              {(photo, i) => (
-                <div class="col-span-3">
-                  <div class="flex h-full container">
-                    <figure class="m-auto w-5/6">
-                      <a href={s3Photography + photo.data.photo_url} target="_blank">
-                        <img
-                          src={s3Photography + photo.data.photo_url}
-                          alt={photo.data.photo_name}
-                        />
-                      </a>
-                    </figure>
+              {(photo) => (
+                <div class="w-full max-w-[400px] flex justify-center">
+                  <div class="w-full relative bg-white rounded-lg overflow-hidden">
+                    {loading() && (
+                      <div class="absolute inset-0 flex items-center justify-center z-10">
+                        <div class="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin" />
+                      </div>
+                    )}
+                    <blockquote
+                      class="instagram-media"
+                      data-instgrm-permalink={photo.data.instagram_url}
+                      data-instgrm-version="14"
+                      data-instgrm-theme="dark"
+                      style={{
+                        background: "#FFF",
+                        border: "0",
+                        margin: "0",
+                        padding: "0",
+                        width: "100%",
+                        minWidth: "0",
+                      }}
+                    />
                   </div>
                 </div>
               )}
