@@ -35,8 +35,8 @@ function GalleryMobile() {
   });
 
   return (
-    <div class="h-full flex" id="photography-mb">
-      <div class="w-11/12 h-3/4 flex flex-col m-auto">
+    <div class="flex" id="photography-mb">
+      <div class="w-11/12 flex flex-col m-auto">
         <div class="flex z-50 ">
           <div class="w-1/2 flex flex-col mx-auto shadow-[0_0_15px_15px_#051420] text-center rounded-md bg-base-100">
             <span class="text-3xl text-accent">Gallery</span>

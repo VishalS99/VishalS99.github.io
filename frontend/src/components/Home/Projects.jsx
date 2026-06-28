@@ -16,14 +16,14 @@ function ProjectsMobile() {
     $(event.target).removeClass("btn-primary")
   };
   return (
-    <div class="h-full flex" id="project-mb">
-      <div class="w-11/12 h-3/4 flex flex-col m-auto">
+    <div class="flex" id="project-mb">
+      <div class="w-11/12 flex flex-col m-auto">
         <div class="flex z-50 ">
           <div class="w-1/2 flex flex-col mx-auto shadow-[0_0_15px_15px_#051420] text-center rounded-md bg-base-100">
             <span class="text-3xl text-accent">Projects</span>
           </div>
         </div>
-        <div class="p-2 h-2/3 border-2 border-solid border-primary rounded-lg shadow-mainbox font-body bg-neutral">
+        <div class="p-2 border-2 border-solid border-primary rounded-lg shadow-mainbox font-body bg-neutral">
           <p class="text-center mb-4 mt-4 text-primary">
             Visit my{" "}
             <a

@@ -100,14 +100,14 @@ function ExperienceMobile() {
   };
 
   return (
-    <div class="h-full flex" id="experience-mb">
-      <div class="w-11/12 h-3/4 flex flex-col m-auto">
+    <div class="flex" id="experience-mb">
+      <div class="w-11/12 flex flex-col m-auto">
         <div class="flex z-50 ">
           <div class="w-1/2 flex flex-col mx-auto shadow-[0_0_15px_15px_#051420] text-center rounded-md bg-base-100">
             <span class="text-3xl text-accent">Experience</span>
           </div>
         </div>
-        <div class="p-4 h-2/3 border-2 border-solid border-primary rounded-lg shadow-mainbox font-body bg-neutral">
+        <div class="p-4 border-2 border-solid border-primary rounded-lg shadow-mainbox font-body bg-neutral">
           <div class="flex flex-col space-y-8 h-full">
             <div class="flex flex-row space-x-8 justify-center">
               <For each={experiences()}>
