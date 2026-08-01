@@ -37,23 +37,23 @@ function GalleryMobile() {
   return (
     <div class="flex" id="photography-mb">
       <div class="w-11/12 flex flex-col m-auto">
-        <div class="flex z-50 ">
-          <div class="w-1/2 flex flex-col mx-auto shadow-[0_0_15px_15px_#051420] text-center rounded-md bg-base-100">
+        <div class="flex flex-col items-center">
+          <div class="w-fit mx-auto relative z-10 -mb-0.5 px-6 py-1.5 bg-gradient-to-b from-base-100 to-neutral border-2 border-solid border-primary rounded-t-lg border-b-0 text-center md:mx-0 md:self-start md:ml-10">
             <span class="text-3xl text-accent">Gallery</span>
           </div>
-        </div>
-        <div class="p-2 border-2 border-solid border-primary rounded-lg shadow-mainbox font-body bg-neutral">
-          <div class="flex flex-col h-full">
-            <p class="text-center mb-8 text-primary">
-              Photos from my travels! Follow me on{" "}
-              <a
-                href="https://www.instagram.com/_vishal_here_/"
-                class="text-accent underline hover:text-secondary"
-              >
-                Instagram
-              </a>{" "}
-              for more.
-            </p>
+          <div class="w-full border-2 border-solid border-primary rounded-lg shadow-mainbox font-body bg-neutral overflow-hidden flex flex-col">
+            <div class="p-2 flex-1">
+            <div class="flex flex-col h-full">
+              <p class="text-center mb-8 text-primary">
+                Photos from my travels! Follow me on{" "}
+                <a
+                  href="https://www.instagram.com/_vishal_here_/"
+                  class="text-accent underline hover:text-secondary"
+                >
+                  Instagram
+                </a>{" "}
+                for more.
+              </p>
 
             <div
               ref={carouselRef}
@@ -111,6 +111,8 @@ function GalleryMobile() {
           </div>
         </div>
       </div>
+      </div>
+    </div>
     </div>
   );
 }
@@ -134,51 +136,53 @@ function Gallery() {
   return (
     <div class="h-full flex" id="photography">
       <div class="w-full h-min flex flex-col m-auto">
-        <div class="flex z-50">
-          <div class="w-[18%] ml-[9rem] flex flex-col shadow-[0_0_15px_15px_#051420] rounded-md text-center bg-base-100">
+        <div class="flex flex-col items-center">
+          <div class="w-fit mx-auto relative z-10 -mb-0.5 px-8 py-1.5 bg-gradient-to-b from-base-100 to-neutral border-2 border-solid border-primary rounded-t-lg border-b-0 text-center md:mx-0 md:self-start md:ml-10">
             <span class="text-4xl text-accent">Gallery</span>
           </div>
-        </div>
-        <div class="p-8 border-2 border-solid border-primary rounded-lg shadow-mainbox font-body bg-neutral">
-          <p class="text-center mb-8 text-primary">
-            Photos from my travels! Follow me on{" "}
-            <a
-              href="https://www.instagram.com/_vishal_here_/"
-              class="text-accent underline hover:text-secondary"
-            >
-              Instagram
-            </a>{" "}
-            for more.
-          </p>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 justify-items-center">
-            <For each={photos()}>
-              {(photo) => (
-                <div class="w-full max-w-[400px] flex justify-center">
-                  <div class="w-full relative bg-white rounded-lg overflow-hidden">
-                    {loading() && (
-                      <div class="absolute inset-0 flex items-center justify-center z-10">
-                        <div class="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin" />
-                      </div>
-                    )}
-                    <blockquote
-                      class="instagram-media"
-                      data-instgrm-permalink={photo.data.instagram_url}
-                      data-instgrm-version="14"
-                      data-instgrm-theme="dark"
-                      style={{
-                        background: "#FFF",
-                        border: "0",
-                        margin: "0",
-                        padding: "0",
-                        width: "100%",
-                        minWidth: "0",
-                      }}
-                    />
+          <div class="w-full border-2 border-solid border-primary rounded-lg shadow-mainbox font-body bg-neutral overflow-hidden flex flex-col">
+            <div class="p-8 flex-1">
+            <p class="text-center mb-8 text-primary">
+              Photos from my travels! Follow me on{" "}
+              <a
+                href="https://www.instagram.com/_vishal_here_/"
+                class="text-accent underline hover:text-secondary"
+              >
+                Instagram
+              </a>{" "}
+              for more.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 justify-items-center">
+              <For each={photos()}>
+                {(photo) => (
+                  <div class="w-full max-w-[400px] flex justify-center">
+                    <div class="w-full relative bg-white rounded-lg overflow-hidden">
+                      {loading() && (
+                        <div class="absolute inset-0 flex items-center justify-center z-10">
+                          <div class="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin" />
+                        </div>
+                      )}
+                      <blockquote
+                        class="instagram-media"
+                        data-instgrm-permalink={photo.data.instagram_url}
+                        data-instgrm-version="14"
+                        data-instgrm-theme="dark"
+                        style={{
+                          background: "#FFF",
+                          border: "0",
+                          margin: "0",
+                          padding: "0",
+                          width: "100%",
+                          minWidth: "0",
+                        }}
+                      />
+                    </div>
                   </div>
-                </div>
-              )}
-            </For>
+                )}
+              </For>
+            </div>
           </div>
+        </div>
         </div>
       </div>
     </div>

@@ -15,35 +15,29 @@ export default function AboutBody() {
 
   return (
     <div class="md:w-11/12 flex flex-col m-auto">
-      <div class="flex z-50">
-        <div class="md:w-[60%] md:ml-title w-[70%] m-auto flex flex-col shadow-[0_0_15px_15px_#051420] rounded-md text-center font-bold bg-base-100">
-          <div class="md:text-2xl text-md text-[#808080]"></div>
-          <div>
-            <span class="md:text-4xl text-3xl text-accent">
-              Vishal Saranathan
-            </span>
-            &nbsp
-            <span class="text-secondary text-xs hidden md:inline">
-              {" "}
-              (He/Him)
-            </span>
-          </div>
+      <div class="flex flex-col items-center">
+        <div class="w-fit mx-auto relative z-10 -mb-0.5 px-8 py-1.5 bg-gradient-to-b from-base-100 to-neutral border-2 border-solid border-primary rounded-t-lg border-b-0 text-center md:mx-0 md:self-start md:ml-10 font-bold">
+          <span class="md:text-4xl text-3xl text-accent">
+            Vishal Saranathan
+          </span>
+          &nbsp
+          <span class="text-secondary text-xs hidden md:inline">
+            {" "}
+            (He/Him)
+          </span>
+        </div>
+        <div class="w-full bg-neutral border-2 text-md border-solid border-primary rounded-lg shadow-mainbox font-body overflow-hidden flex flex-col">
+          <div class="md:text-xl md:text-left p-9 pb-12 flex-1 text-center">
+          <span innerHTML={bioData()} />
+          <span class="md:hidden flex flex-row mt-4">
+            <AiFillMail size={24} class=" mx-auto" />
+            <AiFillGithub size={24} class=" mx-auto" />
+            <AiFillLinkedin size={24} class=" mx-auto" />
+            <AiFillInstagram size={24} class=" mx-auto" />
+            <AiOutlineTwitter size={24} class=" mx-auto" />
+          </span>
         </div>
       </div>
-      <div class="md:text-xl md:text-left p-9 pb-12 bg-neutral border-2 text-md border-solid border-primary rounded-lg shadow-mainbox font-body text-center">
-        {/* {
-        bioData.loading == false? (
-          <span  innerHTML={ bioData()['data']['bio']}></span>
-          ) : "Loading..."
-        } */}
-        <span innerHTML={bioData()} />
-        <span class="md:hidden flex flex-row mt-4">
-          <AiFillMail size={24} class=" mx-auto" />
-          <AiFillGithub size={24} class=" mx-auto" />
-          <AiFillLinkedin size={24} class=" mx-auto" />
-          <AiFillInstagram size={24} class=" mx-auto" />
-          <AiOutlineTwitter size={24} class=" mx-auto" />
-        </span>
       </div>
     </div>
   );

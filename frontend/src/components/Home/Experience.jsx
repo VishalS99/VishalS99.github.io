@@ -102,50 +102,52 @@ function ExperienceMobile() {
   return (
     <div class="flex" id="experience-mb">
       <div class="w-11/12 flex flex-col m-auto">
-        <div class="flex z-50 ">
-          <div class="w-1/2 flex flex-col mx-auto shadow-[0_0_15px_15px_#051420] text-center rounded-md bg-base-100">
+        <div class="flex flex-col items-center">
+          <div class="w-fit mx-auto relative z-10 -mb-0.5 px-6 py-1.5 bg-gradient-to-b from-base-100 to-neutral border-2 border-solid border-primary rounded-t-lg border-b-0 text-center md:mx-0 md:self-start md:ml-10">
             <span class="text-3xl text-accent">Experience</span>
           </div>
-        </div>
-        <div class="p-4 border-2 border-solid border-primary rounded-lg shadow-mainbox font-body bg-neutral">
-          <div class="flex flex-col space-y-8 h-full">
-            <div class="flex flex-row space-x-8 justify-center">
-              <For each={experiences()}>
-                {(exp, i) => (
-                  <div class="mb-2 font-bold">
-                    <a
-                      data-exp={i()}
-                      class={
-                        i() == 0
-                          ? "exp-link text-accent"
-                          : "exp-link text-primary"
-                      }
-                      onClick={getSelectedExperience}
-                    >
-                      {i() + 1}.
-                    </a>
-                  </div>
-                )}
-              </For>
+          <div class="w-full border-2 border-solid border-primary rounded-lg shadow-mainbox font-body bg-neutral overflow-hidden flex flex-col">
+            <div class="p-4 flex-1">
+            <div class="flex flex-col space-y-8 h-full">
+              <div class="flex flex-row space-x-8 justify-center">
+                <For each={experiences()}>
+                  {(exp, i) => (
+                    <div class="mb-2 font-bold">
+                      <a
+                        data-exp={i()}
+                        class={
+                          i() == 0
+                            ? "exp-link text-accent"
+                            : "exp-link text-primary"
+                        }
+                        onClick={getSelectedExperience}
+                      >
+                        {i() + 1}.
+                      </a>
+                    </div>
+                  )}
+                </For>
+              </div>
+              {currentExperience() ? (
+                <ExperienceUnit
+                  role={currentExperience().role}
+                  company={currentExperience().company}
+                  type={currentExperience().job_type}
+                  location={currentExperience().location}
+                  duration={buildDuration(
+                    currentExperience().start_date,
+                    currentExperience().end_date,
+                  )}
+                  logo={currentExperience().logo}
+                  desc={currentExperience().desc}
+                  tech={currentExperience().tech}
+                />
+              ) : (
+                ""
+              )}
             </div>
-            {currentExperience() ? (
-              <ExperienceUnit
-                role={currentExperience().role}
-                company={currentExperience().company}
-                type={currentExperience().job_type}
-                location={currentExperience().location}
-                duration={buildDuration(
-                  currentExperience().start_date,
-                  currentExperience().end_date,
-                )}
-                logo={currentExperience().logo}
-                desc={currentExperience().desc}
-                tech={currentExperience().tech}
-              />
-            ) : (
-              ""
-            )}
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -179,53 +181,55 @@ function Experience() {
   return (
     <div class="h-full flex relative" id="experience">
       <div class="w-full h-min flex flex-col m-auto">
-        <div class="flex z-50">
-          <div class="w-[18%] ml-[9rem] flex flex-col shadow-[0_0_15px_15px_#051420] rounded-md text-center bg-base-100">
+        <div class="flex flex-col items-center">
+          <div class="w-fit mx-auto relative z-10 -mb-0.5 px-8 py-1.5 bg-gradient-to-b from-base-100 to-neutral border-2 border-solid border-primary rounded-t-lg border-b-0 text-center md:mx-0 md:self-start md:ml-10">
             <span class="text-4xl text-accent">Experience</span>
           </div>
-        </div>
-        <div class="p-14 h-2/3 border-2 border-solid border-primary rounded-lg shadow-mainbox font-body bg-neutral">
-          <div class="grid grid-cols-12 gap-4 h-full">
-            <div class="col-span-1 flex text-2xl flex-col">
-              <For each={experiences()}>
-                {(exp, i) => (
-                  <div class="mb-2 font-bold">
-                    <a
-                      href="#"
-                      data-exp={i()}
-                      class={
-                        i() == 0
-                          ? "exp-link text-accent"
-                          : "exp-link text-primary"
-                      }
-                      onClick={getSelectedExperience}
-                    >
-                      {i() + 1}.
-                    </a>
-                  </div>
-                )}
-              </For>
-            </div>
-            <div class="col-span-11">
-              {currentExperience() ? (
-                <ExperienceUnit
-                  role={currentExperience().role}
-                  company={currentExperience().company}
-                  type={currentExperience().job_type}
-                  location={currentExperience().location}
-                  duration={buildDuration(
-                    currentExperience().start_date,
-                    currentExperience().end_date,
+          <div class="w-full h-2/3 border-2 border-solid border-primary rounded-lg shadow-mainbox font-body bg-neutral overflow-hidden flex flex-col">
+            <div class="p-14 flex-1">
+            <div class="grid grid-cols-12 gap-4 h-full">
+              <div class="col-span-1 flex text-2xl flex-col">
+                <For each={experiences()}>
+                  {(exp, i) => (
+                    <div class="mb-2 font-bold">
+                      <a
+                        href="#"
+                        data-exp={i()}
+                        class={
+                          i() == 0
+                            ? "exp-link text-accent"
+                            : "exp-link text-primary"
+                        }
+                        onClick={getSelectedExperience}
+                      >
+                        {i() + 1}.
+                      </a>
+                    </div>
                   )}
-                  logo={currentExperience().logo}
-                  desc={currentExperience().desc}
-                  tech={currentExperience().tech}
-                />
-              ) : (
-                ""
-              )}
+                </For>
+              </div>
+              <div class="col-span-11">
+                {currentExperience() ? (
+                  <ExperienceUnit
+                    role={currentExperience().role}
+                    company={currentExperience().company}
+                    type={currentExperience().job_type}
+                    location={currentExperience().location}
+                    duration={buildDuration(
+                      currentExperience().start_date,
+                      currentExperience().end_date,
+                    )}
+                    logo={currentExperience().logo}
+                    desc={currentExperience().desc}
+                    tech={currentExperience().tech}
+                  />
+                ) : (
+                  ""
+                )}
+              </div>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </div>

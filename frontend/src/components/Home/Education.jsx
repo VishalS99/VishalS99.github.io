@@ -38,33 +38,35 @@ function Education() {
   return (
     <div class="h-full flex" id="education">
       <div class="w-full h-1/2 flex flex-col m-auto">
-        <div class="flex z-50">
-          <div class="w-[18%] ml-[9rem] flex flex-col shadow-[0_0_15px_15px_#051420] rounded-md text-center bg-base-100">
+        <div class="flex flex-col items-center">
+          <div class="w-fit mx-auto relative z-10 -mb-0.5 px-8 py-1.5 bg-gradient-to-b from-base-100 to-neutral border-2 border-solid border-primary rounded-t-lg border-b-0 text-center md:mx-0 md:self-start md:ml-10">
             <span class="text-4xl text-accent">Education</span>
           </div>
-        </div>
-        <div class="p-14 max-h-[80vh] border-2 border-solid border-primary rounded-lg shadow-mainbox font-body bg-neutral">
-          <div class="grid grid-cols-12 gap-4 h-full">
-            <div class="col-span-6 ">
-              <EducationUnit
-                initialLogo="/education/cu.png"
-                initialDegree="Master of Science"
-                initialUniversity="Columbia University"
-                initialLocation="NY"
-                initialMajor="Computer Science"
-                initialSpecialization="Computer Vision and Machine Learning "
-              />
-            </div>
-            <div class="col-span-6 ">
-              <EducationUnit
-                initialLogo="/education/nitt.png"
-                initialDegree="Bachelor of Technology"
-                initialUniversity="National Institute of Technology, Tiruchirappalli"
-                initialLocation="India"
-                initialMajor="Computer Science with Honors | Minor - Management Studies"
-              />
+          <div class="w-full max-h-[80vh] border-2 border-solid border-primary rounded-lg shadow-mainbox font-body bg-neutral overflow-hidden flex flex-col">
+            <div class="p-14 flex-1">
+            <div class="grid grid-cols-12 gap-4 h-full">
+              <div class="col-span-6 ">
+                <EducationUnit
+                  initialLogo="/education/cu.png"
+                  initialDegree="Master of Science"
+                  initialUniversity="Columbia University"
+                  initialLocation="NY"
+                  initialMajor="Computer Science"
+                  initialSpecialization="Computer Vision and Machine Learning "
+                />
+              </div>
+              <div class="col-span-6 ">
+                <EducationUnit
+                  initialLogo="/education/nitt.png"
+                  initialDegree="Bachelor of Technology"
+                  initialUniversity="National Institute of Technology, Tiruchirappalli"
+                  initialLocation="India"
+                  initialMajor="Computer Science with Honors | Minor - Management Studies"
+                />
+              </div>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -75,34 +77,36 @@ function EducationMobile() {
   return (
     <div class="flex">
       <div class="w-11/12 flex flex-col m-auto">
-        <div class="flex z-50 ">
-          <div class="w-1/2 flex flex-col mx-auto shadow-[0_0_15px_15px_#051420] text-center rounded-md bg-base-100">
+        <div class="flex flex-col items-center">
+          <div class="w-fit mx-auto relative z-10 -mb-0.5 px-6 py-1.5 bg-gradient-to-b from-base-100 to-neutral border-2 border-solid border-primary rounded-t-lg border-b-0 text-center md:mx-0 md:self-start md:ml-10">
             <span class="text-3xl text-accent">Education</span>
           </div>
-        </div>
-        <div class="p-8 border-2 border-solid border-primary rounded-lg shadow-mainbox font-body bg-neutral">
-          <div class="flex flex-col h-full">
-            <div>
-              <EducationUnit
-                initialLogo="/education/cu.png"
-                initialDegree="Master of Science"
-                initialUniversity="Columbia University"
-                initialLocation="NY"
-                initialMajor="Computer Science"
-                initialSpecialization="Computer Vision and Machine Learning "
-              />
-            </div>
-            <div class="divider" />
-            <div>
-              <EducationUnit
-                initialLogo="/education/nitt.png"
-                initialDegree="Bachelor of Technology"
-                initialUniversity="National Institute of Technology, Tiruchirappalli"
-                initialLocation="India"
-                initialMajor="Computer Science with Honors | Minor - Management Studies"
-              />
+          <div class="w-full border-2 border-solid border-primary rounded-lg shadow-mainbox font-body bg-neutral overflow-hidden flex flex-col">
+            <div class="p-8 flex-1">
+            <div class="flex flex-col h-full">
+              <div>
+                <EducationUnit
+                  initialLogo="/education/cu.png"
+                  initialDegree="Master of Science"
+                  initialUniversity="Columbia University"
+                  initialLocation="NY"
+                  initialMajor="Computer Science"
+                  initialSpecialization="Computer Vision and Machine Learning "
+                />
+              </div>
+              <div class="divider" />
+              <div>
+                <EducationUnit
+                  initialLogo="/education/nitt.png"
+                  initialDegree="Bachelor of Technology"
+                  initialUniversity="National Institute of Technology, Tiruchirappalli"
+                  initialLocation="India"
+                  initialMajor="Computer Science with Honors | Minor - Management Studies"
+                />
+              </div>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </div>

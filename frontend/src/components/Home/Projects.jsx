@@ -18,25 +18,25 @@ function ProjectsMobile() {
   return (
     <div class="flex" id="project-mb">
       <div class="w-11/12 flex flex-col m-auto">
-        <div class="flex z-50 ">
-          <div class="w-1/2 flex flex-col mx-auto shadow-[0_0_15px_15px_#051420] text-center rounded-md bg-base-100">
+        <div class="flex flex-col items-center">
+          <div class="w-fit mx-auto relative z-10 -mb-0.5 px-6 py-1.5 bg-gradient-to-b from-base-100 to-neutral border-2 border-solid border-primary rounded-t-lg border-b-0 text-center md:mx-0 md:self-start md:ml-10">
             <span class="text-3xl text-accent">Projects</span>
           </div>
-        </div>
-        <div class="p-2 border-2 border-solid border-primary rounded-lg shadow-mainbox font-body bg-neutral">
-          <p class="text-center mb-4 mt-4 text-primary">
-            Visit my{" "}
-            <a
-              href="https://github.com/VishalS99"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-accent underline hover:text-secondary"
-            >
-              Github
-            </a>{" "}
-            to view all my projects{" "}
-          </p>
-          <div class="carousel w-full">
+          <div class="w-full border-2 border-solid border-primary rounded-lg shadow-mainbox font-body bg-neutral overflow-hidden flex flex-col">
+            <div class="p-2 flex-1">
+            <p class="text-center mb-4 mt-4 text-primary">
+              Visit my{" "}
+              <a
+                href="https://github.com/VishalS99"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-accent underline hover:text-secondary"
+              >
+                Github
+              </a>{" "}
+              to view all my projects{" "}
+            </p>
+            <div class="carousel w-full">
             <For each={projects()}>
               {(project, i) => (
                 <div id={"item" + (i() + 1)} class="carousel-item w-full">
@@ -79,6 +79,8 @@ function ProjectsMobile() {
               )}
             </For>
           </div>
+          </div>
+        </div>
         </div>
       </div>
     </div>
@@ -95,48 +97,50 @@ function Projects() {
   return (
     <div class="min-h-full flex relative" id="project">
       <div class="w-full h-min flex flex-col m-auto">
-        <div class="flex z-50">
-          <div class="w-[18%] ml-[9rem] flex flex-col shadow-[0_0_15px_15px_#051420] rounded-md text-center bg-base-100">
+        <div class="flex flex-col items-center">
+          <div class="w-fit mx-auto relative z-10 -mb-0.5 px-8 py-1.5 bg-gradient-to-b from-base-100 to-neutral border-2 border-solid border-primary rounded-t-lg border-b-0 text-center md:mx-0 md:self-start md:ml-10">
             <span class="text-4xl text-accent">Projects</span>
           </div>
-        </div>
-        <div class="p-8 border-2 border-solid border-primary rounded-lg shadow-mainbox font-body bg-neutral">
-          <p class="text-center mb-8 text-primary">
-            Visit my{" "}
-            <a
-              href="https://github.com/VishalS99"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-accent underline hover:text-secondary"
-            >
-              Github
-            </a>{" "}
-            to view all my projects{" "}
-          </p>
-          <div class="grid grid-cols-12 gap-4">
-            <For each={projects()}>
-              {(project, i) => (
-                <div class="col-span-4">
-                  <div class="card bg-base-100 text-primary-content">
-                    <div class="card-body" data-project={i()}>
-                      <h2 class="card-title">{project.data.title}</h2>
-                      <p class="prose">
-                        <span innerHTML={project.data.desc}></span>
-                      </p>
-                      <div class="card-actions justify-end">
-                        <button class="btn btn-outline">
-                          {" "}
-                          <a target="_blank" href={project.data.link}>
-                            Code
-                          </a>
-                        </button>
+          <div class="w-full border-2 border-solid border-primary rounded-lg shadow-mainbox font-body bg-neutral overflow-hidden flex flex-col">
+            <div class="p-8 flex-1">
+            <p class="text-center mb-8 text-primary">
+              Visit my{" "}
+              <a
+                href="https://github.com/VishalS99"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-accent underline hover:text-secondary"
+              >
+                Github
+              </a>{" "}
+              to view all my projects{" "}
+            </p>
+            <div class="grid grid-cols-12 gap-4">
+              <For each={projects()}>
+                {(project, i) => (
+                  <div class="col-span-4">
+                    <div class="card bg-base-100 text-primary-content">
+                      <div class="card-body" data-project={i()}>
+                        <h2 class="card-title">{project.data.title}</h2>
+                        <p class="prose">
+                          <span innerHTML={project.data.desc}></span>
+                        </p>
+                        <div class="card-actions justify-end">
+                          <button class="btn btn-outline">
+                            {" "}
+                            <a target="_blank" href={project.data.link}>
+                              Code
+                            </a>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              )}
-            </For>
+                )}
+              </For>
+            </div>
           </div>
+        </div>
         </div>
       </div>
     </div>
