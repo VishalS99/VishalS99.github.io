@@ -41,7 +41,7 @@ export default function Associations() {
             </figure>
           )}
         </For>
-        <div class="row-span-2 h-full w-0.5 bg-secondary" />
+        <div class="row-span-2 h-full w-px bg-base-content" />
       </div>
     </div>
   );

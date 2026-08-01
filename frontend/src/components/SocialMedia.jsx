@@ -19,7 +19,7 @@ export default function SocialMedia() {
 
   return (
     <div class="flex flex-col h-[calc(100vh-7rem)] gap-8 place-items-center">
-      <div class="h-full w-0.5 bg-secondary" />
+      <div class="h-full w-px bg-base-content" />
 
       <div>
         <a
