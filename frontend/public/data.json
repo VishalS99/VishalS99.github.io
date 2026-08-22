@@ -4,6 +4,13 @@
   "projects": [
     {
       "data": {
+        "title": "Agent Cody",
+        "desc": "Interactive CLI AI agent harness built with Bun, TypeScript, and OpenAI-compatible APIs for software engineering tasks. Implements multi-turn tool calling (file ops, grep, sandboxed bash via Bubblewrap) with Zod-validated boundaries and workspace path guards against traversal. Streams tokens with ANSI/Markdown rendering without a TUI library, tracks session telemetry (token usage, tool success rates), and auto-compacts context within a 1.05M-token budget using scheduled rubric checks.",
+        "link": "https://github.com/VishalS99/agent-cody-banks"
+      }
+    },
+    {
+      "data": {
         "title": "Roamie (AI Chat App)",
         "desc": "High-concurrency real-time chat server in Go using WebSockets, Goroutines, and channels for thread-safe state synchronization across concurrent user sessions. Integrates LLMs via LangChainGo as an autonomous AI group participant with Supermemory for persistent multi-user context and itinerary synthesis. High-performance backend with the Gin framework and PostgreSQL for complex group-based state transitions.",
         "link": "https://github.com/VishalS99/travelapp/"
